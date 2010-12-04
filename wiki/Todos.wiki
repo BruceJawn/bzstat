@@ -25,3 +25,7 @@ introduction to large sample theory
 understand Entropy
 
 central limit theorem in view of information theory
+
+machine learning SVM & shadow projection
+
+intro to data tracing (h(y)|R(y))
