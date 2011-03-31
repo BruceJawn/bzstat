@@ -1,0 +1,396 @@
+% 预览源文件
+
+%% *March 31, 2011
+%% *Bruce Zhou
+%% *http://bzstat.wordpress.com
+
+%% *Copyright (c) <2011> <Bruce Zhou>
+%% *This software is released under the MIT License
+%% *<http://www.opensource.org/licenses/mit-license.php>
+%%
+\documentclass[english]{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{textcomp}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{CJK}
+%\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand*{\perispomeni}{\char126}
+\AtBeginDocument{\DeclareRobustCommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}%
+  \renewcommand{\~}{\perispomeni}%
+}} \DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+\DeclareFontEncoding{LGR}{}{}
+
+\DeclareRobustCommand{\cyrtext}{%
+  \fontencoding{T2A}\selectfont\def\encodingdefault{T2A}}
+\DeclareRobustCommand{\textcyr}[1]{\leavevmode{\cyrtext #1}}
+\AtBeginDocument{\DeclareFontEncoding{T2A}{}{}}
+
+\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+
+
+%\makeatother
+
+\usepackage{babel}
+
+\begin{document}
+\begin{CJK}{GBK}{song}
+\title{On Borel\textendash{}Cantelli Lemma}
+%\begin{center}
+\author{周布 51093001084 李鹏 51093001073}
+%\end{center}
+\maketitle
+
+Borel\textendash{}Cantelli lemma is a theorem about sequences of
+events. It is named after emile Borel and Francesco Paolo Cantelli
+([E. Borel,1909,F.P. Cantelli,1917]). The Borel\textendash{}Cantelli
+lemma states that:
+\newline(1) If
+$\Sigma_{n=1}^{\infty}P(A_{n})<\infty$, then
+$$P\{A_{n}i.o.\}=P(\limsup A_{n})=0.$$
+(2) If $A_{n}$ are independent and
+$\Sigma_{n=1}^{\infty}P(A_{n})=\infty$, then
+$$P\{A_{n}i.o.\}=P(\limsup A_{n})=1.$$
+
+In this paper, we review some extensions of the original
+Borel\textendash{}Cantelli Lemma.
+
+In Barndorff-Nielsen's paper ([Barndorff-Nielsen,1961]), a general
+form of the Law of the Iterated Logarithm for Maximal Order
+Statistics is established by means of a generalization of the
+convergence part of the Borel-Cantelli lemmas. The generalized Lemma
+is as follows:
+
+\textbf{Lemma:} If $$\liminf_{n\to\infty}P(A_{n})=0$$ and
+$$\sum_{n=1}^{\infty}P(A_{n}\cap A_{n+1}^{c})<\infty,$$ then one has
+$$P(\limsup A_{n})=0.$$
+
+Proof: Set $B_{n}=A_{n}\cap A_{n+1}^{c}$, $E=\limsup A_{n}$ and
+$F=\limsup A_{n}^{c}$. We have $$P(\limsup B_{n})\leq
+P(F^{c})=P(\liminf A_{n})\leq\liminf_{n\to\infty}P(A_{n})=0.$$
+
+Observe that $E\cap F\subset\limsup B_{n}$. To see this, fix
+$n\geq1$ and $\omega\in E$, $\exists m\geq n$ such that $\omega\in
+A_{m}$. Put $l=inf\{k\geq m:\omega\in A_{k}^{c}\};$ by definition of
+$F$,
+
+$l<\infty$ and $\omega\in A_{l}\in A_{l-1}^{c}$. Since $n$ is
+arbitrary, $\omega\in\limsup B_{n}$. Hence $$P(E)\leq
+P(F^{c})+P(E\cap F)=0.$$
+
+The Extended Renyi-Lamperti lemma relaxes the assumption of
+independence.
+
+\textbf{Theorem:} If $$\sum_{n=1}^{\infty}P(A_{n})=\infty$$ and
+$$\liminf_{n\to\infty}\frac{\sum_{j=1}^{n}\sum_{k=}^{n}P(A_{i}\cap
+A_{j})}{(\sum_{j=1}^{n}P(A_{j}))^{2}}=c,$$ then $$P(\limsup
+A_{n})\geq1/c.$$
+
+Proof: Recall that if $EX>0$ and $0\leq\epsilon<1$, applying
+Cauchy-Schwarz inequality to $E(XI\{X>\epsilon EX\})$ we have
+$$P(X>\epsilon EX)\geq(1-\epsilon)^{2}(EX)^{2}/EX^{2}.$$
+
+Put $J_{n}=\Sigma_{j=1}^{n}I(A_{j})$ and
+$s_{n}=\Sigma_{j=1}^{n}P(A_{j})=EJ_{n}$. Fix $0<\epsilon<1$ and put
+$B_{n}=\{J_{n}\geq\epsilon s_{n}\}$. As $s_{n}\to\infty$, $\limsup
+B_{n}\subset\limsup A_{n}$. Now
+$P(B_{n})\geq(1-\epsilon)^{2}(EJ_{n})^{2}/EJ_{n}^{2}$, and so
+$\limsup_{n\to\infty}P(B_{n})\geq(1-\epsilon)^{2}/c$. As
+$\epsilon>0$ is arbitrary, the proof is complete.
+
+T Chandra and S Ghosal ([T. K. Chandra,1993]) gave another extension
+in 1993.
+
+\textbf{Theorem:} Suppose $\{A_{n}\}$ is a sequence of events
+satisfying $$P(A_{i}\cap A_{j})-P(A_{i})P(A_{j})\leq
+q(j-i)P(A_{j}),i<j,$$ where $q(m)\geq0,\forall m\geq1$ and
+$$\frac{\sum_{m=1}^{\infty}q(m)}{\sum_{j=1}^{m}P(A_{j})}\leq\infty.$$
+If $$\sum_{n=1}^{\infty}P(A_{n})=\infty,$$ then $$P(\limsup
+A_{n})=1.$$
+
+A Borel-Cantelli lemma for {*}-mixing sequences was given by J. R.
+BLC\textasciitilde{}, D. L. HANSON and L. II. KOOPMANS ([J. R.
+BLC,1963]).
+
+\textbf{Definition:} The sequence $\{X_{n}\}$ will be called
+{*}-mixing if there exists a positive integer $N$ and a real-valued
+function $f$ defined for the integers $n\geq N$ such that (i) $f$ is
+non-increasing with $lim_{n\to\infty}f(n)=0$, and (ii) if $n\geq N$,
+$$A\in\sum_{1}^{m}(\sigma<x_{1},\cdots x_{m}>),$$
+$$B\in\sum_{m+n}(\sigma<x_{m+n}>),$$ then $$|P(AB)-P(A)P(B)|\leq
+f(n)P(A)P(B).$$
+
+\textbf{Theorem:} Let $\{A_{n}\}$ be a sequence of events such that
+$\{I(A_{n})\}$ is {*}-mixing and
+$$\sum_{n=1}^{\infty}P(A_{n})=\infty.$$ Then $$P(\limsup A_{n})=1.$$
+
+Proof: Let $0<\delta<1$ and get $k>N$ such that $f_{k}<\delta$. Get
+$1\leq j\leq k$ such that $\Sigma_{n=0}^{\infty}P(A_{nk+j})=\infty$.
+Set $B_{n}=A_{nk+j}$. It suffices to show that $P(\limsup B_{n})=1$.
+If not, there exists $m\geq1$ such that $P(\cup_{i=1}^{m}B_{i})<1$.
+Hence
+
+$$P(\cap_{i=1}^{m}B_{i})=P(B_{m})+\Sigma_{i=1}^{\infty}P(B_{m+t}\cap_{s=0}^{t-1}B_{m+s}^{c})$$
+
+$$\geq(1-\delta)[P(B_{m})+\Sigma_{t=1}^{\infty}P(B_{m+t})P(\cap_{s=0}^{t-1}B_{m+s}^{c})]$$
+
+$$\geq(1-\delta)P(\cap_{s=0}^{t-1}B_{m+s}^{c})\Sigma_{t=0}^{\infty}P(B_{m+t})=\infty,$$
+which is a contradiction.
+
+The following version of Borel-Cantelli lemma is due to R. J.
+Serfling([R. J. Serfling,1975]), which obtained a new extension for
+dependent events of the divergent part of the Borel-Cantelli lemma.
+
+\textbf{Theorem:} Let $\{A_{n}\}$ be a sequence of events and let
+$$\mathit{\mathcal{F}}_{n}=\sigma<A_{1},\cdots,A_{n}>.$$Then
+$$P\{(\limsup
+A_{n}\Delta\{\sum_{n=1}^{\infty}P(A_{n}|\mathcal{F}_{n-1})=\infty\}\}=0,$$
+where $\Delta$ stands for the symmetric difference.
+
+Proof: [R. J. Serfling,1975] has shown that for all $m<N$,
+$$P(\cap_{n=m}^{N}A_{n}^{c})\leq
+exp[-\Sigma_{n=m}^{N}P(A_{n})]+\Sigma_{n=m}^{N}E|P(A_{n}|\mathcal{\mathsf{\mathfrak{\mathrm{F}}}}_{n-1})-P(A_{n})|.$$
+
+Let $N\to\infty$ and then $m\to\infty$, the results follows.
+
+
+%///
+In 1970, J. Shuster([Shuster, 1970]) provided a generalized version
+of the first and the second Borel-Cantelli Lemma through giving
+lower bound for $p(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}A_k)$ The
+theorem below is the main result of J.Shuster's article.\newline
+\textbf{Theorem:}\newline (a) If there exists an $A\in\textit F$
+such that
+$$\sum_{k=1}^{\infty}P(A\cap A_k)<\infty$$
+then $$P(A_n i.o.)\leq 1-P(A)$$ (b) If for every set $A\in\textit F$
+such that $P(A)>0$ it holds that
+$$\sum_{k=1}^{\infty}P(A\cap A_k)=\infty$$
+then $$P(A_n i.o.)=1$$ proof of (a)  To see that (a) theorem holds,
+we can look at the indicator function $I_k$ of the event $A\cap
+A_k$. Now, define $T=\sum_{k=1}^{\infty}I_k $. Consider the expected
+value of T. Because $E(T)=\sum_{k=1}^{\infty}P(A\cap A_k)$ and, by
+the hypothesis of (a),$\sum_{k=1}^{\infty}P(A\cap A_k)=\infty$ , we
+have $E(T)< \infty$. But this means that only a finite number of
+$A\cap A_k$occur. This means that the probability $P(A_n i.o.)$is at
+most equal to $P(A^c )=1-P(A)$, which is what we wanted to prove.
+Proof of (b) To see why (b) is true, define the set
+$$B_n=\cap_{k=n}^{\infty}A_{k}^{c}=A_{n}^{c}\cap A_{n+1}^{c}\cap
+A_{n+2}^{c}\cap \ldots$$ If we look at the event $A_k\cap B_n$, we
+can see that if $k\ge n$then $P(A_k\cap B_n)=0$ This means that
+$$\sum_{k=1}^{\infty}P(A_k\cap B_n)=\sum_{k=1}^{n-1}P(A_k\cap B_n)$$
+Note that the sum on the right-hand side is finite. This implies
+that we must have that $P(B_n)=0$ and this means that
+$$P(\cup_{n=1}^{\infty}B_n)=P(\cup_{n=1}^{\infty}A_{k}^{c}=0)\rightrightarrows
+P(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}A_k)=1$$ and this is what we
+wanted to show.\newline
+
+Clearly, this theorem is a generalization of the original
+Borel-Cantelli Lemmas. When we set $A=\Omega$, (a) is precisely what
+the original first Borel-Cantelli Lemma stated. Meanwhile, if we
+compare (b)  with the original second Borel-Cantelli Lemma, we can
+see that the independence criterion is dropped altogether.
+%///
+
+A generalization of the Erdos\textendash{}Renyi formulation of the
+Borel\textendash{}Cantelli lemma is obtained by Valentin V.Petrov
+([Valentin V.Petrov,2002] and
+\newline[Valentin V.Petrov,2004]).
+
+\textbf{Theorem A:} Let $A_{1},A_{2}\cdots$ be a sequence of events
+satisfying conditions
+
+$\sum_{n=1}^{\infty}P(A_{n})=\infty$ and $P(A_{k}A_{j})\leq
+CP(A_{k})P(A_{j})$ for all $k,j>L$ such that $k=j$ and for some
+constants $C\geq1$ and $L$. Then $P(\limsup A_{n})\geq1/C.$
+
+\textbf{Theorem B:} Let $A_{1},A_{2}\cdots$ be a sequence of events
+satisfying conditions
+
+$$\sum_{n=1}^{\infty}P(A_{n})=\infty.$$ Let $H$ be an arbitrary real
+constant. Put
+
+$$\alpha_{H}=\liminf\frac{\sum_{1\leq i<k\leq
+n}(P(A_{i}A_{k})-HP(A_{i})P(A_{k}))}{(\sum_{k=1}^{n}P(A_{k}))^{2}}.$$
+Then $$P(\limsup A_{n})\leq\frac{1}{H+2\alpha_{H}}.$$
+%///
+\textbf{Remark:} $P(A_{n}i.o.)=\alpha$ and equivalent statements
+
+\textbf{Theorem:} Let $0<\alpha\leq1$. The following statements are
+equivalent:
+
+1. $P(A_{n}i.o.)\geq\alpha$
+
+2. $\Sigma_{n=1}^{\infty}P(A_{n}\cap B)=\infty$ for any
+$B\in\mathcal{F}$ with $P(B)>1-\alpha$
+
+3. for any $B\in\mathcal{F}$ with $P(B)>1-\alpha$, the sequence
+$\{P(A_{n}\cap B)\}$ contains an infinite number of positive
+numbers.
+
+Proof: First note that (2)$\Rightarrow$(3),
+
+if not, only a finite number of $P(A_{n}\cap B)>0$ so
+$\Sigma_{n=1}^{\infty}P(A_{n}\cap B_{n})\neq\infty$.
+
+(1)$\Rightarrow$(2):
+
+Suppose $P(A_{n}i.o.)\geq\alpha$ but assume that
+$\Sigma_{n=1}^{\infty}P(A_{n}\cap B)<\infty$. Then according to
+Borel-Cantelli lemma. $P(A_{n}i.o.)+P(B)-1\leq P(A_{n}\cap
+Bi.o.)=0$. This implies $P(B)\leq1-\alpha$.
+
+(3)$\Rightarrow$(1): Suppose that (3) holds but
+$P(A_{n}i.o.)<\alpha$, we have $P(\cup_{k=n}^{\infty}A_{n})<\alpha$
+for some $n$. Define $C=\cup_{k=n}^{\infty}A_{k}$ and $B=C^{c}$,
+then $P(B)>1-\alpha$ and $B\cap
+C=B\cap\cup_{k=n}^{\infty}A_{k}=\phi$, which means $P(A_{k}\cap
+B)=0$ for all $k\geq n$. This is a contradiction.
+%///
+ WenLiu, Jia-anYan
+and Weiguo Yangc generalized the extended Borel\textendash{}Cantelli
+lemma as corollaries([WenLiu,2003]).
+
+\textbf{Corollary:} Let $(\mathcal{F}_{n},n\geq0)$ be an increasing
+sequence of $\sigma$-algebras and let$B_{n}\in\mathcal{F}_{n}$. Put
+$$A=\{\sum_{i=1}^{\infty}I_{B_{i}}=\infty\};B=\{\sum_{i=1}^{\infty}P(B_{i}|\mathcal{F}_{i-1})=\infty\}.$$
+Then we have $A=B$ a.s., and
+$$\lim_{n\text{\textrightarrow\ensuremath{\infty}}}\frac{\sum_{i=1}^{n}I_{Bi}}{\sum_{i=1}^{n}P(B_{i}|\mathcal{F}_{i-1})}=1$$
+a.s. on B.
+
+The first part of this corollary is the Extended
+Borel\textendash{}Cantelli Lemma
+\\
+({Chow,1988}), and the second part of this corollary is the sharper
+form of the Borel\textendash{}Cantelli lemma ({Dubins,1965}).
+
+Generalizations of the second Borel\textendash{}Cantelli lemma are
+obtained under very weak dependence conditions by Tapas Kumar
+Chandra({Tapas Kumar Chandra,2008}), subsuming several earlier
+results as special cases.
+
+Let $\{A_{n}\}n\geq1$, satisfy
+
+$$\Sigma_{n=1}^{\infty}P(A_{n})=0$$ and
+$$\liminf_{n\to\infty}\frac{\Sigma_{1\leq j<k\leq n}(P(A_{j}\cap
+A_{k})-a_{ij})}{(\Sigma_{1\leq k\leq n}P(A_{k}))^{2}}=L,$$
+
+where $a_{ij}$ satisfy $$\Sigma_{1\leq j<m\leq k\leq
+n}|a_{ij}|=o((\Sigma_{m\leq k\leq n}P(A_{k}))^{2})$$ $\forall
+m\geq1$ and
+$$\liminf_{m\to\infty}\limsup_{n\to\infty}\frac{\Sigma_{1\leq j<k\leq
+n}a_{jk}}{(\Sigma_{m\leq k\leq n}P(A_{k}))^{2}}\leq d.$$ Assume that
+$L$ and $d$ are finite. Then $$d+L\geq\frac{1}{2}$$ and $$P(\limsup
+A_{n})\geq(2d+2L)^{-1}.$$
+
+Borel-Cantelli lemma when the condition of independent events is
+replaced by negative quadrant dependent condition was discussed by
+Gholam Hossein Yari and Farhad Hossein Zadeh([Gholam Hossein
+Yari,2010]).
+
+\textbf{Definition:} A sequence of random variables ${X_{n};n\ge1}$
+is said to be pairwise negative quadrant dependent (NQD) if,
+$$P(X_{i}\leq x,Y_{j}\leq y)\leq P(X_{i}\leq x)P(Y_{j}\leq y)$$ for
+all $x,y\in R$ and for all $i,j\ge1$, $i\text{\ensuremath{\neq}}j$.
+
+\textbf{Theorem:} Let ${A_{n}}_{n=1}^{\infty}$ be a sequence of
+events in a probability space
+$$(\lyxmathsym{\textgreek{W}},\lyxmathsym{\textgreek{A}},\lyxmathsym{\textgreek{R}})$$
+and set
+$$\limsup_{n\text{\textrightarrow\ensuremath{\infty}}}A_{n}=A.$$
+If
+$$\lyxmathsym{\textgreek{S}}_{n=1}^{\infty}P(A_{n})=\text{\ensuremath{\infty}},$$
+and
+$$\limsup_{n\to\infty}\frac{\text{(\textgreek{S}}_{i=1}^{\text{\ensuremath{\infty}}}P(A_{i}))^{2}}{\Sigma_{i=1}^{n}\text{\textgreek{S}}_{j=1}^{n}P[A_{i}\cap
+A_{j}]}=\alpha>0,$$ then, (a)$P[A]\ge\lyxmathsym{\textgreek{a}}$.
+(b) If the events are pairwise (NQD) then $P[A]=1$.
+
+From those theorems above, we can see extended
+Borel\textendash{}Cantelli lemmas can relax parts of the assumptions
+in the original one such as independence. However, the drawback is
+obvious that we either need some more complicated conditions or can
+only get some weaker results. The beauty in the original
+Borel\textendash{}Cantelli lemma's simplicity and interpretability
+is lost. Many of those theorem are derived as lemmas for varied
+purposes or specified problems. Although it seems that most of those
+lemmas are more general, they're not as popular as the original one
+because those extended lemmas are more difficult to explain and
+remember.
+\newline
+\newline
+\begin{center}
+\textbf{References} \end{center}
+[1][E. Borel, Denumerable
+probabilities and their applications arithmetic(in French),
+\newline Rend. Circ. Mat. Palermo (2) , 27 (1909) pp. 247-271]\{E. Borel,
+1909-1-1\}
+\newline
+[2][F.P. Cantelli, On probability as a frequency limit(in Italian),
+\newline Atti Accad. Naz. Lincei , 26 : 1 (1917) pp. 39-45.]\{F.P.
+Cantelli, 1917-1-1\}
+\newline
+[3][Subhashis Ghoshal, T. K. Chandra, On Borel-Cantelli lemmas.
+\newline In Essays on Probability and Statistics, Festschrift in honour of
+Professor Anil Kumar  Bhattacharya (S. P. Mukherjee et al. (eds.)),
+Department of Statistics, Presidency College, Calcutta, pp. 231-239,
+1994.]\{Subhashis Ghoshal, 1994\}
+\newline
+[4][S. de Vos, On Generalizations Of The Borel-Cantelli Lemmas,
+\newline bachelor thesis of university of groningen, 2010]\{Vos, 2010\}
+\newline
+[5][Barndorff-Nielsen, On the rate of growth of the partial maxima
+of a sequence of independent identically distributed random
+variables,
+\newline Mathematica Scandinavica, 1961.]\{Barndorff-Nielsen, 1961\}
+\newline
+[6][T. K. Chandra, S. Ghosal, Some elementary strong laws of large
+numbers: a review,
+\newline Tech. Report, Indian Statistical Institute (1993).]\{T. K. Chandra,
+1993\}
+\newline
+[7][J. R. BLC~, D. L. HANSON, L. II. KOOPMANS On the Strong Law of
+Large Numbers for a Class of Stochastic Processes,
+\newline Z. Wahrscheinlichkeitstheorie 2, 1-11 (1963).]\{J. R. BLC, 1963\}
+\newline
+[8][R. J. Serfling, A General Poisson Approximation Theorem,
+\newline The Annals of Probability, Vol. 3, No. 4 (Aug., 1975), pp.
+726-731]\{R. J. Serfling, 1975\}
+\newline[9][J. Shuster, On the Borel-Cantelli problem,
+\newline Canadian Mathematical Bulletin 13 (1970), pages 273-275]\{Shuster, 1970\}
+\newline[10][Valentin V.Petrov, A note on the Borel-Cantelli lemma,
+\newline Statistics \& Probability Letters 58 (2002) 283-286]\{Valentin
+V.Petrov, 2002\}
+\newline
+[11][Valentin V.Petrov, A generalization of the Borel-Cantelli
+Lemma,
+\newline Statistics \& Probability Letters 67 (2004) 233-239]\{Valentin
+V.Petrov, 2004\}
+\newline
+[12][WenLiu, Jia-anYan, Weiguo Yangc, A limit theorem for partial
+sums of random variables and its applications,
+\newline Statistics \& Probability Letters 62 (2003) 79-86]\{WenLiu, 2003\}
+\newline
+[13][Chow, Teicher, Probability Theory, 2nd Edition.
+\newline Springer, New York, (1988) p. 249]\{Chow, 1988\}
+\newline
+[14][Dubins, Freedman, A sharper form of the Borel-Cantelli lemma
+and the strong law.
+\newline Ann. Math. Statist 36, (1965) 800-807]\{Dubins, 1965\}
+\newline
+[15][Tapas Kumar Chandra, The Borel-Cantelli lemma under dependence
+conditions,
+\newline Statistics \& Probability Letters 78 (2008) 390-395]\{Tapas Kumar
+Chandra, 2008\}
+\newline
+[16][Gholam Hossein Yari, Farhad Hossein Zadeh, Extend the
+Borel-Cantelli Lemma to Sequences of Non-Independent Random
+Variables,
+\newline Applied Mathematical Sciences, Vol. 4, 2010, no. 13, 637-642]
+\{Gholam Hossein Yari, 2010\}
+\end{CJK}
+\end{document}

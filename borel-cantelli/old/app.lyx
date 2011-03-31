@@ -1,0 +1,216 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+after Theorem A:!
+\end_layout
+
+\begin_layout Standard
+Remark: 
+\begin_inset Formula $P(A_{n}i.o.)=\alpha$
+\end_inset
+
+ and equivalent statements
+\end_layout
+
+\begin_layout Standard
+Theorom Let 
+\begin_inset Formula $0<\alpha\leq1$
+\end_inset
+
+.
+ The following statements are equivalent:
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $P(A_{n}i.o.)\geq\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n}\cap B)=\infty$
+\end_inset
+
+ for any 
+\begin_inset Formula $B\in\mathcal{F}$
+\end_inset
+
+ with 
+\begin_inset Formula $P(B)>1-\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ for any 
+\begin_inset Formula $B\in\mathcal{F}$
+\end_inset
+
+ with 
+\begin_inset Formula $P(B)>1-\alpha$
+\end_inset
+
+, the sequence 
+\begin_inset Formula $\{P(A_{n}\cap B)\}$
+\end_inset
+
+ contains an infinite number of positive numbers.
+\end_layout
+
+\begin_layout Standard
+Proof: First note that (2)
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+(3),
+\end_layout
+
+\begin_layout Standard
+if not, only a finite number of 
+\begin_inset Formula $P(A_{n}\cap B)>0$
+\end_inset
+
+ so 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n}\cap B_{n})\neq\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(1)
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+(2):
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $P(A_{n}i.o.)\geq\alpha$
+\end_inset
+
+ but assume that 
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n}\cap B)<\infty$
+\end_inset
+
+.
+ Then according to Borel-Cantelli lemma.
+ 
+\begin_inset Formula $P(A_{n}i.o.)+P(B)-1\leq P(A_{n}\cap Bi.o.)=0$
+\end_inset
+
+.
+ This implies 
+\begin_inset Formula $P(B)\leq1-\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(3)
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+(1): Suppose that (3) holds but 
+\begin_inset Formula $P(A_{n}i.o.)<\alpha$
+\end_inset
+
+, we have 
+\begin_inset Formula $P(\cup_{k=n}^{\infty}A_{n})<\alpha$
+\end_inset
+
+ for some 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $C=\cup_{k=n}^{\infty}A_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $B=C^{c}$
+\end_inset
+
+, then 
+\begin_inset Formula $P(B)>1-\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $B\cap C=B\cap\cup_{k=n}^{\infty}A_{k}=\phi$
+\end_inset
+
+, which means 
+\begin_inset Formula $P(A_{k}\cap B)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $k\geq n$
+\end_inset
+
+.
+ This is a contradiction.
+\end_layout
+
+\end_body
+\end_document
