@@ -1,0 +1,1084 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+On Borel–Cantelli Lemma
+\end_layout
+
+\begin_layout Standard
+Borel–Cantelli lemma is a theorem about sequences of events.
+ It is named after Émile Borel and Francesco Paolo Cantelli (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "E. Borel, 1909,F.P. Cantelli, 1917"
+
+\end_inset
+
+).
+ The Borel–Cantelli lemma states that:
+\end_layout
+
+\begin_layout Standard
+(1) If 
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n})<\infty$
+\end_inset
+
+, then 
+\begin_inset Formula $P\{A_{n}i.o.\}=P(\limsup A_{n})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(2) If 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ are independent and 
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n})=\infty$
+\end_inset
+
+, then 
+\begin_inset Formula $P\{A_{n}i.o.\}=P(\limsup A_{n})=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In this paper, we review some extensions of the original Borel–Cantelli
+ Lemma.
+\end_layout
+
+\begin_layout Standard
+In Barndorff-Nielsen's paper (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Barndorff-Nielsen, 1961"
+
+\end_inset
+
+), a general form of the Law of the Iterated Logarithm for Maximal Order
+ Statistics is established by means of a generalization of the convergence
+ part of the Borel-Cantelli lemmas.
+ The generalized Lemma is as follows:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Lemma:
+\series default
+ If 
+\begin_inset Formula $\liminf_{n\to\infty}P(A_{n})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n}\cap A_{n+1}^{c})<\infty$
+\end_inset
+
+, then one has 
+\begin_inset Formula $P(\limsup A_{n})=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: Set 
+\begin_inset Formula $B_{n}=A_{n}\cap A_{n+1}^{c}$
+\end_inset
+
+, 
+\begin_inset Formula $E=\limsup A_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $F=\limsup A_{n}^{c}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $P(\limsup B_{n})\leq P(F^{c})=P(\liminf A_{n})\leq\liminf_{n\to\infty}P(A_{n})$
+\end_inset
+
+=0.
+\end_layout
+
+\begin_layout Standard
+Observe that 
+\begin_inset Formula $E\cap F\subset\limsup B_{n}$
+\end_inset
+
+.
+ To see this, fix 
+\begin_inset Formula $n\geq1$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega\in E$
+\end_inset
+
+, 
+\begin_inset Formula $\exists m\geq n$
+\end_inset
+
+ such that 
+\begin_inset Formula $\omega\in A_{m}$
+\end_inset
+
+.
+ Put 
+\begin_inset Formula $l=inf\{k\geq m:\omega\in A_{k}^{c}\};$
+\end_inset
+
+ by definition of 
+\begin_inset Formula $F$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $l<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega\in A_{l}\in A_{l-1}^{c}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $n$
+\end_inset
+
+ is arbitrary, 
+\begin_inset Formula $\omega\in\limsup B_{n}$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula $P(E)\leq P(F^{c})+P(E\cap F)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Extended Renyi-Lamperti lemma relaxes the assumption of independence.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem:
+\series default
+ If 
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n})=\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $\liminf_{n\to\infty}\frac{\sum_{j=1}^{n}\sum_{k=}^{n}P(A_{i}\cap A_{j})}{(\sum_{j=1}^{n}P(A_{j}))^{2}}=c,$
+\end_inset
+
+ then 
+\begin_inset Formula $P(\limsup A_{n})\geq1/c.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: Recall that if 
+\begin_inset Formula $EX>0$
+\end_inset
+
+ and 
+\begin_inset Formula $0\leq\epsilon<1$
+\end_inset
+
+, applying Cauchy-Schwarz inequality to 
+\begin_inset Formula $E(XI\{X>\epsilon EX\})$
+\end_inset
+
+ we have 
+\begin_inset Formula $P(X>\epsilon EX)\geq(1-\epsilon)^{2}(EX)^{2}/EX^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Put 
+\begin_inset Formula $J_{n}=\Sigma_{j=1}^{n}I(A_{j})$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}=\Sigma_{j=1}^{n}P(A_{j})=EJ_{n}$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $0<\epsilon<1$
+\end_inset
+
+ and put 
+\begin_inset Formula $B_{n}=\{J_{n}\geq\epsilon s_{n}\}$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $s_{n}\to\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\limsup B_{n}\subset\limsup A_{n}$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $P(B_{n})\geq(1-\epsilon)^{2}(EJ_{n})^{2}/EJ_{n}^{2}$
+\end_inset
+
+, and so 
+\begin_inset Formula $\limsup_{n\to\infty}P(B_{n})\geq(1-\epsilon)^{2}/c$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ is arbitrary, the proof is complete.
+\end_layout
+
+\begin_layout Standard
+TК Chandra and S Ghosal (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "T. K. Chandra, 1993"
+
+\end_inset
+
+) gave another extension in 1993.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem:
+\series default
+ Suppose 
+\begin_inset Formula $\{A_{n}\}$
+\end_inset
+
+ is a sequence of events satisfying 
+\begin_inset Formula $P(A_{i}\cap A_{j})-P(A_{i})P(A_{j})\leq q(j-i)P(A_{j}),i<j,$
+\end_inset
+
+ where 
+\begin_inset Formula $q(m)\geq0,\forall m\geq1$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\sum_{m=1}^{\infty}q(m)}{\sum_{j=1}^{m}P(A_{j})}\leq\infty.$
+\end_inset
+
+ If 
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n})=\infty$
+\end_inset
+
+, then 
+\begin_inset Formula $P(\limsup A_{n})=1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Borel-Cantelli lemma for *-mixing sequences was given by J.
+ R.
+ BLC~, D.
+ L.
+ HANSON and L.
+ II.
+ KOOPMANS (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "J. R. BLC, 1963"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition: 
+\series default
+The sequence 
+\begin_inset Formula $\{X_{n}\}$
+\end_inset
+
+ will be called *-mixing if there exists a positive integer 
+\begin_inset Formula $N$
+\end_inset
+
+ and a real-valued function 
+\begin_inset Formula $f$
+\end_inset
+
+ defined for the integers 
+\begin_inset Formula $n\geq N$
+\end_inset
+
+ such that (i) 
+\begin_inset Formula $f$
+\end_inset
+
+ is non-increasing with 
+\begin_inset Formula $lim_{n\to\infty}f(n)=0$
+\end_inset
+
+, and (ii) if 
+\begin_inset Formula $n\geq N$
+\end_inset
+
+, 
+\begin_inset Formula $A\in\sum_{1}^{m}$
+\end_inset
+
+(
+\begin_inset Formula $\sigma<x_{1},\cdots x_{m}>$
+\end_inset
+
+), 
+\begin_inset Formula $B\in\sum_{m+n}$
+\end_inset
+
+(
+\begin_inset Formula $\sigma<x_{m+n}>$
+\end_inset
+
+), then 
+\begin_inset Formula $|P(AB)-P(A)P(B)|\leq f(n)P(A)P(B).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem:
+\series default
+ Let 
+\begin_inset Formula $\{A_{n}\}$
+\end_inset
+
+ be a sequence of events such that 
+\begin_inset Formula $\{I(A_{n})\}$
+\end_inset
+
+ is *-mixing and 
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n})=\infty$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $P(\limsup A_{n})=1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: Let 
+\begin_inset Formula $0<\delta<1$
+\end_inset
+
+ and get 
+\begin_inset Formula $k>N$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{k}<\delta$
+\end_inset
+
+.
+ Get 
+\begin_inset Formula $1\leq j\leq k$
+\end_inset
+
+ such that 
+\begin_inset Formula $\Sigma_{n=0}^{\infty}P(A_{nk+j})=\infty$
+\end_inset
+
+.
+ Set 
+\begin_inset Formula $B_{n}=A_{nk+j}$
+\end_inset
+
+.
+ It suffices to show that 
+\begin_inset Formula $P(\limsup B_{n})=1$
+\end_inset
+
+.
+ If not, there exists 
+\begin_inset Formula $m\geq1$
+\end_inset
+
+ such that 
+\begin_inset Formula $P(\cup_{i=1}^{m}B_{i})<1$
+\end_inset
+
+.
+ Hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(\cap_{i=1}^{m}B_{i})=P(B_{m})+\Sigma_{i=1}^{\infty}P(B_{m+t}\cap_{s=0}^{t-1}B_{m+s}^{c})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\geq(1-\delta)[P(B_{m})+\Sigma_{t=1}^{\infty}P(B_{m+t})P(\cap_{s=0}^{t-1}B_{m+s}^{c})]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\geq(1-\delta)P(\cap_{s=0}^{t-1}B_{m+s}^{c})\Sigma_{t=0}^{\infty}P(B_{m+t})=\infty$
+\end_inset
+
+, which is a contradiction.
+\end_layout
+
+\begin_layout Standard
+The following version of Borel-Cantelli lemma is due to R.
+ J.
+ Serfling(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R. J. Serfling, 1975"
+
+\end_inset
+
+), which obtained a new extension for dependent events of the divergent
+ part of the Borel-Cantelli lemma.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem:
+\series default
+ Let 
+\begin_inset Formula $\{A_{n}\}$
+\end_inset
+
+ be a sequence of events and let 
+\begin_inset Formula $\mathit{\mathcal{F}}_{n}=\sigma<A_{1},\cdots,A_{n}>.$
+\end_inset
+
+Then 
+\begin_inset Formula $P\{(\limsup A_{n}\Delta\{\sum_{n=1}^{\infty}P(A_{n}|\mathcal{F}_{n-1})=\infty\}\}=0$
+\end_inset
+
+, where 
+\begin_inset Formula $\Delta$
+\end_inset
+
+stands for the symmetric difference.
+\end_layout
+
+\begin_layout Standard
+Proof: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R. J. Serfling, 1975"
+
+\end_inset
+
+ has shown that for all 
+\begin_inset Formula $m<N$
+\end_inset
+
+, 
+\begin_inset Formula $P(\cap_{n=m}^{N}A_{n}^{c})\leq exp[-\Sigma_{n=m}^{N}P(A_{n})]+\Sigma_{n=m}^{N}E|P(A_{n}|\mathcal{\mathsf{\mathfrak{\mathrm{F}}}}_{n-1})-P(A_{n})|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ and then 
+\begin_inset Formula $m\to\infty$
+\end_inset
+
+, the results follows.
+\end_layout
+
+\begin_layout Standard
+A generalization of the Erdos–Renyi formulation of the Borel–Cantelli lemma
+ is obtained by Valentin V.Petrov (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Valentin V.Petrov, 2002"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Valentin V.Petrov, 2004"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem A:
+\series default
+ Let 
+\begin_inset Formula $A_{1},A_{2}\cdots$
+\end_inset
+
+ be a sequence of events satisfying conditions
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n})=∞$
+\end_inset
+
+ and 
+\begin_inset Formula $P(A_{k}A_{j})\leq CP(A_{k})P(A_{j})$
+\end_inset
+
+ for all 
+\begin_inset Formula $k,j>L$
+\end_inset
+
+ such that 
+\begin_inset Formula $k=j$
+\end_inset
+
+ and for some constants 
+\begin_inset Formula $C\geq1$
+\end_inset
+
+ and 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $P(\limsup A_{n})\geq1/C.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem B:
+\series default
+ Let 
+\begin_inset Formula $A_{1},A_{2}\cdots$
+\end_inset
+
+ be a sequence of events satisfying conditions
+\begin_inset Formula $\sum_{n=1}^{\infty}P(A_{n})=∞$
+\end_inset
+
+ .
+ Let 
+\begin_inset Formula $H$
+\end_inset
+
+ be an arbitrary real constant.
+ Put 
+\begin_inset Formula $\alpha_{H}=\liminf\frac{\sum_{1\leq i<k\leq n}(P(A_{i}A_{k})-HP(A_{i})P(A_{k}))}{(\sum_{k=1}^{n}P(A_{k}))^{2}}.$
+\end_inset
+
+ Then 
+\begin_inset Formula $P(\limsup A_{n})\leq\frac{1}{H+2\alpha_{H}}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+WenLiu, Jia-anYan and Weiguo Yangc generalized the extended Borel–Cantelli
+ lemma as corollaries(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WenLiu, 2003"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary:
+\series default
+ Let 
+\begin_inset Formula $(\mathcal{F}_{n},n\geq0)$
+\end_inset
+
+ be an increasing sequence of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras and let
+\begin_inset Formula $B_{n}\in\mathcal{F}_{n}$
+\end_inset
+
+.
+ Put 
+\begin_inset Formula $A=\{\sum_{i=1}^{\infty}I_{B_{i}}=∞\};B=\{\sum_{i=1}^{\infty}P(B_{i}|\mathcal{F}_{i-1})=∞\}.$
+\end_inset
+
+ Then we have 
+\begin_inset Formula $A=B$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+a.s.
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+, and 
+\begin_inset Formula $\lim_{n\text{→∞}}\frac{\sum_{i=1}^{n}I_{Bi}}{\sum_{i=1}^{n}P(B_{i}|\mathcal{F}_{i-1})}=1$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+a.s.
+ on B
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+The first part of this corollary is the Extended Borel–Cantelli Lemma (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chow, 1988"
+
+\end_inset
+
+), and the second part of this corollary is the sharper form of the Borel–Cantel
+li lemma (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dubins, 1965"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Generalizations of the second Borel–Cantelli lemma are obtained under very
+ weak dependence conditions by Tapas Kumar Chandra(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tapas Kumar Chandra, 2008"
+
+\end_inset
+
+), subsuming several earlier results as special cases.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\{A_{n}\}n\geq1$
+\end_inset
+
+, satisfy 
+\begin_inset Formula $\Sigma_{n=1}^{\infty}P(A_{n})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\liminf_{n\to\infty}\frac{\Sigma_{1\leq j<k\leq n}(P(A_{j}\cap A_{k})-a_{ij})}{(\Sigma_{1\leq k\leq n}P(A_{k}))^{2}}=L$
+\end_inset
+
+, where 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ satisfy 
+\begin_inset Formula $\Sigma_{1\leq j<m\leq k\leq n}|a_{ij}|=o((\Sigma_{m\leq k\leq n}P(A_{k}))^{2})$
+\end_inset
+
+ 
+\begin_inset Formula $\forall m\geq1$
+\end_inset
+
+ and 
+\begin_inset Formula $\liminf_{m\to\infty}\limsup_{n\to\infty}\frac{\Sigma_{1\leq j<k\leq n}a_{jk}}{(\Sigma_{m\leq k\leq n}P(A_{k}))^{2}}\leq d$
+\end_inset
+
+.
+ Assume that 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $d$
+\end_inset
+
+ are finite.
+ Then 
+\begin_inset Formula $d+L\geq\frac{1}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $P(\limsup A_{n})\geq(2d+2L)^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Borel-Cantelli lemma when the condition of independent events is replaced
+ by negative quadrant dependent condition was discussed by Gholam Hossein
+ Yari and Farhad Hossein Zadeh(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gholam Hossein Yari, 2010"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition:
+\series default
+ A sequence of random variables 
+\begin_inset Formula ${X_{n};n≥1}$
+\end_inset
+
+ is said to be pairwise negative quadrant dependent (NQD) if, 
+\begin_inset Formula $P(X_{i}\leq x,Y_{j}\leq y)\leq P(X_{i}\leq x)P(Y_{j}\leq y)$
+\end_inset
+
+ For all 
+\begin_inset Formula $x,y\in R$
+\end_inset
+
+ and for all 
+\begin_inset Formula $i,j≥1$
+\end_inset
+
+, 
+\begin_inset Formula $i\text{≠}j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem:
+\series default
+ Let 
+\begin_inset Formula ${A_{n}}_{n=1}^{∞}$
+\end_inset
+
+ be a sequence of events in a probability space 
+\begin_inset Formula $(Ω,Α,Ρ)$
+\end_inset
+
+ and set 
+\begin_inset Formula $\limsup_{n\text{→∞}}A_{n}=A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $Σ_{n=1}^{∞}P(A_{n})=\text{∞}$
+\end_inset
+
+ and, 
+\begin_inset Formula $\limsup_{n\to\infty}\frac{\text{(Σ}_{i=1}^{\text{∞}}P(A_{i}))^{2}}{\Sigma_{i=1}^{n}\text{Σ}_{j=1}^{n}P[A_{i}\cap A_{j}]}=\alpha>0$
+\end_inset
+
+.
+ then,
+\end_layout
+
+\begin_layout Standard
+(a)
+\begin_inset Formula $P[A]≥α$
+\end_inset
+
+.
+ (b) If the events are pairwise (NQD) then 
+\begin_inset Formula $P[A]=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+From those theorems above, we can see extended Borel–Cantelli lemmas can
+ relax parts of the assumptions in the original one such as independence.
+ However, the drawback is obvious that we either need some more complicated
+ conditions or can only get some weaker results.
+ The beauty in the original Borel–Cantelli lemma's simplicity and interpretabili
+ty is lost.
+ Many of those theorem are derived as lemmas for varied purposes or specified
+ problems.
+ Although it seems that most of those lemmas are more general, they're not
+ as popular as the original one because those extended lemmas are more difficult
+ to explain and remember.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "E. Borel, \"Les probabilités dénombrables et leurs applications arithmetique\" Rend. Circ. Mat. Palermo (2) , 27 (1909) pp. 247–271"
+key "E. Borel, 1909-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "F.P. Cantelli, \"Sulla probabilità come limite della frequenza\" Atti Accad. Naz. Lincei , 26 : 1 (1917) pp. 39–45."
+key "F.P. Cantelli, 1917-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Subhashis Ghoshal, T. K. Chandra, On Borel-Cantelli lemmas. In Essays on Probability and Statistics, Festschrift in honour of Professor Anil Kumar  Bhattacharya (S. P. Mukherjee et al. (eds.)), Department of Statistics, Presidency College, Calcutta, pp. 231--239, 1994."
+key "Subhashis Ghoshal, 1994"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Barndorff-Nielsen, On the rate of growth of the partial maxima of a sequence of independent identically distributed random variables, Mathematica Scandinavica, 1961."
+key "Barndorff-Nielsen, 1961"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "T. K. Chandra, S. Ghosal, Some elementary strong laws of large numbers: a review, Tech. Report, Indian Statistical Institute (1993)."
+key "T. K. Chandra, 1993"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "J. R. BLC~, D. L. HANSON, L. II. KOOPMANS (On the Strong Law of Large Numbers for a Class of Stochastic Processes, Z. Wahrscheinlichkeitstheorie 2, 1--11 (1963)."
+key "J. R. BLC, 1963"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "R. J. Serfling, A General Poisson Approximation Theorem, The Annals of Probability, Vol. 3, No. 4 (Aug., 1975), pp. 726-731"
+key "R. J. Serfling, 1975"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Valentin V.Petrov, A note on the Borel–Cantelli lemma, Statistics & Probability Letters 58 (2002) 283–286"
+key "Valentin V.Petrov, 2002"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Valentin V.Petrov, A generalization of the Borel–Cantelli Lemma, Statistics & Probability Letters 67 (2004) 233–239"
+key "Valentin V.Petrov, 2004"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "WenLiu, Jia-anYan, Weiguo Yangc, A limit theorem for partial sums of random variables and its applications, Statistics & Probability Letters 62 (2003) 79–86"
+key "WenLiu, 2003"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Chow, Teicher, Probability Theory, 2nd Edition. Springer, New York, (1988) p. 249"
+key "Chow, 1988"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Dubins, Freedman, A sharper form of the Borel–Cantelli lemma and the strong law. Ann. Math. Statist 36, (1965) 800–807"
+key "Dubins, 1965"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Tapas Kumar Chandra, The Borel–Cantelli lemma under dependence conditions, Statistics & Probability Letters 78 (2008) 390–395"
+key "Tapas Kumar Chandra, 2008"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Gholam Hossein Yari, Farhad Hossein Zadeh, Extend the Borel-Cantelli Lemma to Sequences of Non-Independent Random Variables, Applied Mathematical Sciences, Vol. 4, 2010, no. 13, 637 - 642"
+key "Gholam Hossein Yari, 2010"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
