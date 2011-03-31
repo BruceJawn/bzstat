@@ -13,3 +13,11 @@ This page will be updated from time to time.
   * *Status:* ||Concept||Working in Process||Alpha||Beta||v? Released!|| 
   * *Description:* Summary of the project.
   * *Page:* Click this for project detals.
+
+
+==Numerical Analysis Class Report==
+  * *Status:* ||v? Released!|| 
+  * *Description:* Study Report for Numerical Analysis.
+  * *Page:* Click this for project detals.
+  * *Source:*
+http://code.google.com/p/bzstat/downloads/detail?name=Study%20Report%20for%20Numerical%20Analysis%28with%20latex%2Cmatlab%2Csmartdraw%20sources%29.zip&can=2&q=
