@@ -1,0 +1,15 @@
+#summary All projects by Bruce.
+
+= Introduction =
+
+I'm listing all my projects here, old and new, small and big.
+Some of these projects are 'dead' for the moment, but I may pick them up later.
+This page will be updated from time to time.
+
+
+= Details =
+
+==Project Name(sub-project of ?)==
+  * *Status:* ||Concept||Working in Process||Alpha||Beta||v? Released!|| 
+  * *Description:* Summary of the project.
+  * *Page:* Click this for project detals.
