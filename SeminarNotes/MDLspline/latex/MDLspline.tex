@@ -1,0 +1,503 @@
+% Ô¤ÀÀÔ´ÎÄ¼þ
+
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{indentfirst}
+
+\title{Splines, BLUPS, MDL and Knots Selection - ECNU Seminar Notes}
+\author{Bu Zhou}
+\date{2011,6,26}
+\maketitle
+
+\begin{document}
+\section{Linear mixed models}
+Linear mixed model is 
+
+$y=X\beta+Zu+\epsilon$
+
+where 
+
+$E\left[\begin{array}{c}
+u\\
+\epsilon\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\end{array}\right]$ and $Cov\left[\begin{array}{c}
+u\\
+\epsilon\end{array}\right]=\left[\begin{array}{cc}
+G & 0\\
+0 & R\end{array}\right]$
+
+\section{Estimation for linear mixed models}
+suppose:
+
+$u\sim N(0,\sigma_{u}^{2}I_{m})$
+
+$\epsilon\sim N(0,\sigma_{\epsilon}^{2}I_{n})$
+
+$cov(u,\epsilon')=0$
+
+$X_{n\times p}$ known matrix
+
+$Z_{n\times m}$ known matrix
+
+$u_{m\times1}$ vector of random effects
+
+$y_{n\times1}$ data vector
+
+$\beta_{p\times1}$ vector of unknown fixed effects parameters
+
+we have:
+
+$y\sim N(X\beta,\sigma^{2}V)$, $V=\lambda ZZ'+I_{n}$, $\lambda=\sigma_{u}^2/\sigma_{\epsilon}^2$
+and $y|u\sim N(X\beta+Zu,\sigma_{\epsilon}^{2}I_{n})$ ({*}0)
+
+penalized least squares criterion: $||y-X\beta-Zu||^{2}+\frac{1}{\lambda}||u||^{2}$({*}),
+$\lambda>0$ is a tuning parameter.
+
+For given $\lambda$, minimizing ({*}) with respect to $\beta$ and $u$ leads
+to so-called mixed model equations
+
+$\left(\begin{array}{cc}
+X'X & X'Z\\
+Z'X & Z'Z+\frac{1}{\lambda}I_{m}\end{array}\right)\left(\begin{array}{c}
+\hat{\beta}\\
+\hat{u}\end{array}\right)=\left(\begin{array}{c}
+X'y\\
+Z'y\end{array}\right)$
+
+then:
+
+$\hat{\delta}=\left(\begin{array}{c}
+\hat{\beta}\\
+\hat{u}\end{array}\right)=(M'M+\frac{1}{\lambda}D)^{-1}M'y$; $M=(XZ),$$D_{(p+m)\times(p+m)}=diag(0,\cdots,0,1,\cdots,1)$
+
+the conditional ML(see({*}0)) estimator of $\sigma_{\epsilon}^{2}$
+is $\hat{\sigma_{\epsilon}^{2}}=n^{-1}||y-M\hat{\delta}||^{2}=n^{-1}y'(I-H)^{2}y$
+
+fitted values are $\hat{y}=Hy$; $H=M(M'M+\frac{1}{\lambda}D)^{-1}M'$
+\newpage
+\section{Penalized Splines as BLUPs}
+
+(Brumback BA , Ruppert D , Wand MP (1999) Comment on Shively, Kohn
+\& Wood . Journal of the American Statistical Association)
+
+$y_{i}=f(x_{i})+\sigma_{\epsilon}\epsilon_{i},1\leq i\leq n,$
+
+scatterplot data: $(x_{i},y_{i}),1\leq i\leq n$
+
+$\epsilon_{i}$: independent $N(0,1)$ variates, $cov(\epsilon)=I$
+
+$\kappa_{1},\cdots,\kappa_{K}$: set of distinct numbers inside the
+range of the $x_{i}$'s 
+
+$x_{+}=max(0,x)$
+
+spline model: $f(x)=\beta_{0}+\beta_{1}x_{1}+\cdots+\beta_{p}x^{p}+\sigma_{u}\Sigma_{k=1}^{K}u_{k}(x_{i}-\kappa_{k})_{+}^p$
+
+$u=\left[\begin{array}{c}
+u_{1}\\
+\vdots\\
+u_{K}\end{array}\right]\sim N(0,I)$, is independent of $\epsilon=\left[\begin{array}{ccc}
+\epsilon_{1} & \cdots & \epsilon_{n}\end{array}\right]^{T}$
+
+$y=X\beta+\sigma_{u}Zu+\sigma_{\epsilon}\epsilon$, $\left[\begin{array}{c}
+u\\
+\epsilon\end{array}\right]\sim N(0,I)$
+
+where
+
+$X=\left[\begin{array}{cc}
+1 & x_{1}\\
+\vdots & \vdots\\
+1 & x_{n}\end{array}\right]$ and $Z=\left[\begin{array}{ccc}
+(x_{1}-\kappa_{1})_{+} & \cdots & (x_{1}-\kappa_{K})_{+}\\
+\vdots & \ddots & \vdots\\
+(x_{n}-\kappa_{1})_{+} & \cdots & (x_{n}-\kappa_{K})_{+}\end{array}\right]$
+
+Estimation for given $\sigma_{u}$ and $\sigma_{\epsilon}$(replaced
+by estimators $\hat{\sigma_{u}}$ and $\hat{\sigma_{\epsilon}}$),
+the best linear unbiased predictor (BLUP) of $y$ is 
+
+$\hat{f}=X\hat{\beta}+\sigma_{u}Z\hat{u}$
+
+where $\hat{\beta}=\{X^{T}(\sigma_{u}^{2}ZZ^{T}+\sigma_{\epsilon}^{2}I)^{-1}X\}^{-1}X^{T}(\sigma_{u}^{2}ZZ^{T}+\sigma_{\epsilon}^{2}I)^{-1}y$
+and $\hat{u}=(\sigma_{u}^{2}Z^{T}Z+\sigma_{\epsilon}^{2}I)^{-1}Z^{T}(y-X\hat{\beta})$
+
+can be treated as an estimator of $f=[f(x_{1}),\cdots f(x_{n})]^{T}$(extends
+to $f(x)$ for arbitrary $x$ is straightforward)
+
+$\hat{f}$ can be rewritten as $\hat{f}=C(C^{T}C+\lambda D)^{-1}C^{T}y$
+
+where $C=[XZ]$, $D=diag(0,0,1,1,\cdots,1)$ and $\lambda=\sigma_{\epsilon}^{2}/\sigma_{u}^{2}$.
+
+\section{Minimum Description Length in the view of Bayesianism}
+
+{[}Applying MDL To Learning Best Model Granularity, by Q.Gao, M.Li,
+and P.M.B.Vitanyi, Artificial Intelligence, 2000{]}
+
+\subsection{Introduction:}
+
+Drawback of Person-Neyman testing:
+
+Rejection of the zero hypothesis does not imply the acceptation of
+alternative hypothesis. Does not establish the relative likelihood
+between competing hypotheses.(All hypothesis different from the zero
+hypothesis must be taken together to form the alternative hypothesis,
+we can not even use the same data to test the alternative hypothesis
+or a subset of it)
+
+Bayesianism:
+
+$P(H_{i}|D)=\frac{P(D|H_{i})P(H_{i})}{P(D)=\Sigma_{i}P(D|H_{i})P(H_{i})}$, 
+select hypothesis/model with the maximum a posterior probability(MAP) 
+
+where
+
+$\Omega$: a discrete sample space
+
+$D,H_{1},H_{2},\cdots$: a countable set of events(subsets) of $\Omega$
+
+$H=\{H_{1},H_{2},\cdots\}$: hypothesis space
+
+hypotheses $H_{i}$ are exhaustive(at least one is true), mutually
+exclusive($H_{i}\cap H_{j}=\phi$ for all $i,j$)
+
+Advantage: Allow to estimate the relative likelihood of different
+possible hypotheses.
+
+Disadvantage: Prior probability $P(H_{i})$, how to initially derive
+it? May be unknown, uncomputable or conceivably nonexistent.
+
+We know where to go next(Bayes's updating rule), but where shall we
+start(prior)?
+
+The answer: Find a single probability distribution to use as the prior
+distribution in each different case, with approximately the same result
+as if we had used the real distribution. 
+
+Surprisingly, this solution turns out to be possible up to some mild
+restrictions.
+
+Universal prior in Bayes' rule: algorithmic universal probability
+$m(x|y)=2^{-K(x|y)}$,where $K(x|y)$: prefix Kolmogrov complexity
+of $x$ given $y$.
+
+Problem: Cannot be directly used since Kolmogrov complexity $K(x|y)$
+is non-computable, and so is the algorithmic universal probability
+$m(x|y)$. Approximation is needed in the real world applications.
+
+A {}``good'' computable approximation to $m(x)$ $\Rightarrow$MDL:
+
+\subsection{MDL in one page:}
+
+From Bayes' formula, we must choose the hypothesis $H$ that maximizes
+the posterior $P(H|D)$, taking the negative logarithm on both side,
+
+$-logP(H|D)=-logP(D|H)-logP(H)+logP(D)$
+
+$logP(D)$ is a constant and can be ignored because we just want to
+optimize the left-hand side of the equation over $H$.
+
+The problem is minimizing $-logP(D|H)-logP(H)$ = 
+
+- (the log universal probability of the model + the log of the probability
+of the data given the model)
+
+Ideal MDL: $K(H)+K(D|H)$ (use universal prior)
+
+Real MDL: $-logP(D|H)-logP(H)$, $P(D|H)$ must be computable. (Applied
+statistical version of MDL, use Shannon-Frano code as the approximation
+of the non-computable Kolmogrov complexity)
+
+The Shannon-Frano code assigns code words of $length\stackrel{+}{=}-logP(.)$
+to elements randomly drawn according to a probability $P(.)$.
+
+$-logP(H)$: the length, in bits, of the description of the theory,
+$=K(H)$, provided that $-logP(H)\stackrel{+}{=}-logm(H)$
+
+$-logP(D|H)$: the length, in bits, of data when encoded with the
+help of the theory, $=K(D|H)$ provided that $-logP(D|H)\stackrel{+}{=}-logm(D|H)$
+
+For {}``typical'' outcomes, $K(D|H)\stackrel{+}{=}-logP(D|H)$ means
+that the classic Shannon-Frano code length reaches the prefix Kolmogorov
+complexity on these data samples. (Under the assumption that the data
+sample is typical for the contemplated hypotheses, the ideal MDL principal
+and the applied statistical one coincide, and moreover, both are valid
+for a set of data samples of Lebesgue measure one.)
+\subsection{Examples}
+\textbf{Example 1.} (Hypothesis Testing) 
+
+$H$: some model $H(\theta)$ with a set of parameter $\theta=\{\theta_{1},\cdots,\theta_{k}\}$
+of precision $c$.
+
+number $k$ may vary and influence the description complexity of $H(\theta)$.
+
+For example, if we want to determine the distribution of the length
+of beans, then $H$ is a normal distribution $N(\mu,\sigma)$ with
+parameter median $\mu$ and variation $\sigma$. So essentially we
+have to determine the correct hypothesis described by identifying
+the type of distribution(normal) and the correct parameter vector
+$(\mu,\sigma)$. 
+
+In such cased, we minimize $-logP(D|\theta)-logP(\theta)$.
+
+\textbf{Example 2.} (Fitting of a 'best' polynomial on $n$ given sample points
+in the 2-dimensional plane.)
+
+For each fixed $k$, $k=0,\cdots,n-1$, let $f_{k}$ be the best polynomial
+of degree $k$, fitting on points $(x_{i},y_{i})(1\leq i\leq n)$,
+which minimizes the error
+
+$error(f_{k})=\Sigma_{i=1}^{n}(f_{k}(x_{i})-y_{i})^{2}$.
+
+Assume each coefficient takes $c$ bits, so $f_{k}$ is encoded in
+$c(k+1)$ bits.
+
+Assume $Pr(y_{1},\cdots,y_{n}|f,x_{1},\cdots,x_{n})=\prod exp\{-O[(f(x_{i})-y_{i})^{2}]\}$.(measurement
+with Gaussian/normal errors), so $-log(Pr(y_{1},\cdots,y_{n}|f,x_{1},\cdots,x_{n}))=c'error(f)$
+for some computable $c'$.
+
+The MDL principle tells us to choose $f=f_{m}$ with $m\in\{0,\cdots,n-1\}$,
+which minimizes $c(m+1)+c'error(f_{m})$.
+
+\section{Model selection by the MDL principle}
+
+data: $\{x_{i},y_{i}\}_{i=1}^{n},y_{i}=f(x_{i})+\epsilon_{i},\epsilon_{i}\sim iidN(0,\sigma^{2})$
+
+$f$ can be well approximated by $r$-order regression spline with
+$m$ knots: $f(x)\approx b_{0}+b_{1}x+\cdots+b_{r}x^{r}+\Sigma_{j=1}^{m}\beta_{j}(x-k_{j})_{+}^{r}$
+
+$k_{j}$: location of the $j$th knot
+
+$\{b_{0},\cdots,b_{r},\beta_{1},\cdots,\beta_{m}\}$: set of the coefficients
+
+$(a)_{+}=max(0,a)$
+
+$(a)_{+}^{c}=((a)_{+})^{c}$
+
+assume $min(x_{i})<k_{1}<\cdots<k_{m}<max(x_{i})$ and $\{k_{1},\cdots,k_{m}\}$
+is subset of $\{x_{1},\cdots,x_{m}\}$
+
+estimation of $f$ can be transformed into a model selection problem
+with each plausible model $\theta$ completely specified by $\theta=\{r,m,k,b,\beta\}$
+
+note that different $\theta$'s may have different dimensions (number
+of parameters)
+
+Let
+
+$x=(x_{1},\cdots,x_{n})^{T}$, $y=(y_{1},\cdots,y_{n})^{T}$ and $M=(XZ)=(1,x,\cdots,x^{\hat{r}},(x-\hat{k_{1}}1_{n\times1})_{+}^{\hat{r}},\cdots,(x-\hat{k}_{\hat{m}}1)_{+}^{\hat{r}})$
+
+
+\subsection{regression spline}
+
+the natural estimates(maximum likelihood estimates conditional on
+$\hat{r}$, $\hat{m}$ and $\hat{k}$) of $b$ and $\beta$ are given
+by 
+
+$(\hat{b}^{T},\hat{\beta}^{T})^{T}=(M^{T}M)^{-1}M^{T}y$ 
+
+we estimate $\theta$ and hence $f$ by minimizing the 
+
+$MDL(\hat{\theta})=
+\begin{array}{c}
+log\hat{m}+\Sigma_{j=1}^{\hat{m}}log\hat{l_{j}}+\frac{1}{2}\Sigma_{j=1}^{\hat{m}+1}log\hat{l_{j}}+\frac{n}{2}log\{\frac{RSS(\hat{\theta})}{n}\}, \hat{r}=0;\\
+log\hat{m}+\Sigma_{j=1}^{\hat{m}}log\hat{l_{j}}+\frac{\hat{m}+\hat{r}+1}{2}logn+\frac{n}{2}log\{\frac{RSS(\hat{\theta})}{n}\}, hat{r}\geq1.\end{array}$ 
+
+\textbf{Example 3.} (Derivation of code length expression for choosing knots
+in regression spline smoothing)
+
+$L(y)=L$(fitted model)$+L$(data given the fitted model)$=L(\hat{\theta})+L(y|\hat{\theta})$.
+
+1. $L(\hat{\theta})=L(\hat{r})+L(\hat{m})+L(\hat{k}|\hat{m})+L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})$
+
+code length for $\hat{r}$ and $\hat{m}$($L(\hat{r})+L(\hat{m})$): 
+
+use $r\in\{0,1,2,3\}$ $\Longrightarrow$$L(\hat{r})=-log_{2}\frac{1}{4}=log_{2}4=2$
+bits, a constant that will be ignored.
+
+$\hat{m}$ is an integer, $L(\hat{m})=L^{*}(\hat{m})=log_{2}c+log_{2}\hat{m}+log_{2}log_{2}\hat{m}+\cdots$,
+where $c\approx2.865$, $L^{*}(\hat{m})\approx log_{2}\hat{m}$when
+$\hat{m}$ is reasonably large.
+
+Thus $L(\hat{r})+L(\hat{m})\approx log_{2}\hat{m}$.
+
+code length for $\hat{k}$ given $\hat{m}$($L(\hat{k}|\hat{m})$): 
+
+note that $\{\hat{k_{1}},\dots,\hat{k_{\hat{m}}}\}$ is restricted
+to be a subset of $\{x_{1},\cdots,x_{n}\}$.
+
+$L(\hat{k}|\hat{m})=L(\hat{l_{1}},\cdots,\hat{l_{\hat{m}}}|\hat{m})=\Sigma_{j=1}^{\hat{m}}L^{*}(\hat{l_{j}})\approx\Sigma_{j=1}^{\hat{m}}log_{2}\hat{l_{j}}$.
+
+where $\hat{l_{j}}$(integers) is the $j$th successive {}``index
+difference'', the number of $x_{i}$'s which satisfy $\hat{k_{j-1}}\leq x_{i}<\hat{k_{j}},j=1,\cdots,\hat{m};\hat{k_{0}}=min(x_{i}),\hat{k_{\hat{m}+1}}=max(x_{i})$.
+
+(complete knowledge of $\hat{l_{1}},\cdots,\hat{l_{\hat{m}}}$ implies
+complete knowledge of $\hat{k}$.)
+
+code length for $\{\hat{b},\hat{\beta}\}$ given $\{\hat{r},\hat{m},\hat{k}\}$($L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})$):
+
+each of $\{\hat{b},\hat{\beta}\}$- $\hat{b}_{i}$ or $\hat{\beta}_{i}$,
+is (conditional) maximum likelihood estimate from $n$ data points
+when $\hat{r}\geq1$, so it can be effectively encoded with $\frac{1}{2}log_{2}n$
+bits. 
+
+$L(\hat{b_{0}})=\cdots=L(\hat{b_{\hat{r}}})=L(\hat{\beta_{1}})=\cdots=L(\hat{\beta_{\hat{m}}})=\frac{1}{2}log_{2}n$,
+so
+
+$L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})=\frac{\hat{r}+\hat{m}+1}{2}log_{2}n$,
+when $\hat{r}\geq1$.
+
+$L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})=\Sigma_{j=1}^{\hat{m}}L$({}``$j$th
+estimated height'')$=\frac{1}{2}\Sigma_{j=1}^{\hat{m}+1}log_{2}\hat{l_{j}}$,
+when $\hat{r}=0$.
+
+code length for $y$ given $\hat{\theta}=\{\hat{r},\hat{m},\hat{k},\hat{b},\hat{\beta}\}$($L(y|\hat{\theta})$):
+
+$L(y|\hat{\theta})=\frac{n}{2}log_{2}\{\frac{RSS(\hat{\theta})}{n}\}+C$,
+where $C$ is a negligible term and
+$RSS(\hat{\theta})=\Sigma\{y_{i}-\hat{f}(x_{i})\}^{2}$. 
+
+
+\subsection{smoothing spline/penalized spline}
+
+$(\hat{b}^{T},\hat{\beta}^{T})^{T}=(M^{T}M+\frac{1}{\lambda}D)^{-1}M^{T}y$
+
+consider a set of normal models of form $y|b_{\eta}\sim N(X_{\eta}\beta_{\eta}+Z_{\eta}b_{\eta},\sigma^{2}I_{n})$
+
+$\eta$:index of the set of candidate models
+
+$X_{\eta}$: $n\times r_{\eta}$ matrix
+
+$Z_{\eta}$: $n\times m_{\eta}$ matrix
+
+$\beta_{\eta}$: $r_{\eta}\times1$ parameter vector
+
+$b_{\eta}$: $m_{\eta}\times1$ parameter vector
+
+Note that estimates $\beta_{\eta}$, $b_{\eta}$ and $\hat{\sigma}_{\eta}^{2}$
+depends on the parameter $\lambda\in[0,\infty]$
+
+we specify a model by giving the pair $\gamma=(\eta,\lambda)$
+
+assume response data are modelled with a set of density functions
+$f(y;\gamma,\theta)$, where parameter vector $\theta$ varies within
+a specified parameter space,
+
+the NML(normalized maximum likelihood) function is defined by
+
+$\hat{f}(y;\gamma)=\frac{f(y;\gamma,\hat{\theta})}{C(\gamma)}$,
+
+where 
+
+$\hat{\theta}=\hat{\theta}(y)$ is the ML estimator of $\theta$ and 
+
+$C(\gamma)=\int f(x;\gamma,\hat{\theta}(x))dx$ is the normalizing
+constant.
+
+integral is taken over the sample space
+
+$\hat{f}(y;\gamma)$ defines a density function provided that $C(\gamma)$
+is bounded.
+
+shortest code length: $-log\hat{f}(y;\gamma)=-logf(y;\gamma,\hat{\theta})+logC(\gamma)$ 
+
+$f(y;\gamma,\hat{\theta})=(2\pi)^{-\frac{n}{2}}|\hat{\Sigma}|^{-\frac{1}{2}}exp\{-\frac{1}{2}(y-(X\hat{\beta}+Z\hat{b}))^{T}\hat{\Sigma}{}^{-1}(y-(X\hat{\beta}+Z\hat{b}))\}$
+
+where $\hat{\Sigma}=\hat{\sigma^{2}}I$,
+
+$\hat{\sigma^{2}}=n^{-1}||y-\hat{y}||^{2}=n^{-1}||y-(X\hat{\beta}+Z\hat{b})||^{2}=n^{-1}||y-M^{T}\hat{\theta}||^{2}=n^{-1}y^{T}||I-H||^{2}y$,
+$H=(M^{T}M+\frac{1}{\lambda}D)^{-1}M^{T}$.
+
+then we have $f(y;\gamma,\hat{\theta})=(2\pi)^{-\frac{n}{2}}|n^{-1}||y-\hat{y}||^{2}I_{n}|^{-\frac{1}{2}}exp\{-\frac{1}{2}trace(I_{n})\}=(2\pi)^{-\frac{n}{2}}\{n^{-1}||y-\hat{y}||^{2}\}^{-\frac{n}{2}}exp\{-\frac{1}{2}n\}$
+
+$-log_{2}f(y;\gamma,\hat{\theta})=\frac{n}{2}log_{2}(2\pi)+\frac{n}{2}log_{2}\{n^{-1}||y-\hat{y}||^{2}\}+log_{2}\{exp(-\frac{1}{2}n)\}=\frac{n}{2}log_{2}\{\frac{RSS(\hat{\theta})}{n}\}+C$,
+
+where $RSS(\hat{\theta})=n^{-1}||y-\hat{y}||^{2}=\Sigma_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}$
+is the residual sum of squares.
+
+$C=\frac{n}{2}log_{2}(2\pi)+log_{2}\{exp(-\frac{1}{2}n)\}$ is a negligible
+term.
+
+\subsection{Knots deletion algorithm}
+
+Problem: finding the global minimizer of $MDL(\hat{\theta})$ is difficult(Due
+to the complexity of $\hat{\theta}$)- a global search is infeasible
+even if $n$ is only of moderate size.
+
+Disadvantage: miss the global minimizer 
+
+Advantage: guarantees to find a local minimizer
+
+Algorithm:
+
+1. fixed a value for $\hat{r}$(spline order, 0,1,2,3), placing(every
+$s$(3\textasciitilde{}5) sorted values of $x_{i}$'s/equally spaced
+sample quantiles of $x_{1}\cdots x_{n}$) a relatively large number($K$)
+of initial knots, (overfitted model) compute $MDL(\hat{\theta})$
+
+2. for each knot in all knots, remove this knot, recompute $MDL(\hat{\theta})$;
+choose/delete/record the knot s.t. $MDL(\hat{\theta})$1-$MDL(\hat{\theta})$2=max
+(greedy strategy)
+
+3. goto 1 until all initial knots are removed
+
+4. choose the one has the smallest $MDL(\hat{\theta})$ value with
+respect to $K$ ($K+1$models in total) as the best fitted model for
+that fixed value of $\hat{r}$
+
+5. change the value of $\hat{r}$, goto 1 until all candidate values(0,1,2,3)
+are computed
+
+(5+.change the value of $\lambda$, goto 1 until all candidate values
+are computed)
+
+6. chose the model has smallest $MDL(\hat{\theta})$ with respect
+to $\hat{r}$(and $\lambda$) as the final model
+
+\section{References:}
+
+\subsection{Books:}
+
+{[}Semiparametric Regression by David Ruppert, M. P. Wand, R. J. Carroll,
+2003{]}
+
+{[}Longitudinal Data Analysis, Edited by Garrett Fitzmaurice, Marie
+Davidian, Geert Verbeke \& Geert Molenberghs, 2008{]}
+
+{[}Stochastic Complexity in Statistical Inquiry, by Jorma Rissanen,
+World Scientific, 1989{]}
+
+{[}Information and Complexity in Statistical Modeling, by Jorma Rissanen,
+Springer, 2007{]}
+
+{[}The Minimum Description Length Principle, by Peter Grunwald, MIT
+Press, 2007{]}
+
+\subsection{Papers:}
+
+{[}Applying MDL To Learning Best Model Granularity, by Q.Gao, M.Li,
+and P.M.B.Vitanyi, Artificial Intelligence, 2000{]}
+
+{[}Comment on Shively, Kohn and Wood, by Babette A. Brumback , David
+Ruppert , M. P. Wand, Journal of the American Statistical Association,
+1999{]}
+
+{[}Regression Spline Smoothing Using The Minimum Description Length
+Principle, by Thomas C. M. Lee, Statistics \& Probability Letters,
+2000{]}
+
+{[}MDL Knot Selection For Penalized Splines, by Antti Liski and Erkki
+P. Liski, WITMSE, 2008{]}
+
+{[}Model Selection In Linear Mixed Models Using MDL Criterion With
+An Application To Spline Smoothing, by Erkki P. Liski and Antti Liski,
+WITMSE, 2008{]}
+
+{[}http://www.mdl-research.org/{]}
+\end{document}
