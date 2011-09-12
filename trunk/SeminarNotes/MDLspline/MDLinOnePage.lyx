@@ -1,0 +1,428 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Minimum Description Length in the view of Bayesianism
+\end_layout
+
+\begin_layout Standard
+[Applying MDL To Learning Best Model Granularity, by Q.Gao, M.Li, and P.M.B.Vitanyi,
+ Artificial Intelligence, 2000]
+\end_layout
+
+\begin_layout Standard
+Introduction:
+\end_layout
+
+\begin_layout Standard
+Drawback of Person-Neyman testing:
+\end_layout
+
+\begin_layout Standard
+Rejection of the zero hypothesis does not imply the acceptation of alternative
+ hypothesis.
+ Does not establish the relative likelihood between competing hypotheses.(All
+ hypothesis different from the zero hypothesis must be taken together to
+ form the alternative hypothesis, we can not even use the same data to test
+ the alternative hypothesis or a subset of it)
+\end_layout
+
+\begin_layout Standard
+Bayesianism:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(H_{i}|D)=\frac{P(D|H_{i})P(H_{i})}{P(D)=\Sigma_{i}P(D|H_{i})P(H_{i})}$
+\end_inset
+
+, select hypothesis/model with the maximum a posterior probability(MAP)
+ 
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega$
+\end_inset
+
+: a discrete sample space
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D,H_{1},H_{2},\cdots$
+\end_inset
+
+: a countable set of events(subsets) of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H=\{H_{1},H_{2},\cdots\}$
+\end_inset
+
+: hypothesis space
+\end_layout
+
+\begin_layout Standard
+hypotheses 
+\begin_inset Formula $H_{i}$
+\end_inset
+
+ are exhaustive(at least one is true), mutually exclusive(
+\begin_inset Formula $H_{i}\cap H_{j}=\phi$
+\end_inset
+
+for all 
+\begin_inset Formula $i,j$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Advantage: Allow to estimate the relative likelihood of different possible
+ hypotheses.
+\end_layout
+
+\begin_layout Standard
+Disadvantage: Prior probability
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ 
+\begin_inset Formula $P(H_{i})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+, how to initially derive it? May be unknown, uncomputable or conceivably
+ nonexistent.
+\end_layout
+
+\begin_layout Standard
+We know where to go next(Bayes's updating rule), but where shall we start(prior)
+?
+\end_layout
+
+\begin_layout Standard
+The answer: Find a single probability distribution to use as the prior distribut
+ion in each different case, with approximately the same result as if we
+ had used the real distribution.
+ 
+\end_layout
+
+\begin_layout Standard
+Surprisingly, this solution turns out to be possible up to some mild restriction
+s.
+\end_layout
+
+\begin_layout Standard
+Universal prior in Bayes' rule: algorithmic universal probability 
+\begin_inset Formula $m(x|y)=2^{-K(x|y)}$
+\end_inset
+
+,where 
+\begin_inset Formula $K(x|y)$
+\end_inset
+
+: prefix Kolmogrov complexity of 
+\begin_inset Formula $x$
+\end_inset
+
+ given
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Problem: Cannot be directly used since Kolmogrov complexity 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $K(x|y)$
+\end_inset
+
+ is non-computable, and so is the 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+algorithmic universal probability 
+\begin_inset Formula $m(x|y)$
+\end_inset
+
+.
+ Approximation is needed in the real world applications.
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ computable approximation to 
+\begin_inset Formula $m(x)$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+MDL:
+\end_layout
+
+\begin_layout Standard
+MDL in one page:
+\end_layout
+
+\begin_layout Standard
+From Bayes' formula, we must choose the hypothesis 
+\begin_inset Formula $H$
+\end_inset
+
+ that maximizes the posterior 
+\begin_inset Formula $P(H|D)$
+\end_inset
+
+, taking the negative logarithm on both side,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-logP(H|D)=-logP(D|H)-logP(H)+logP(D)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $logP(D)$
+\end_inset
+
+ is a constant and can be ignored because we just want to optimize the left-hand
+ side of the equation over 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The problem is minimizing 
+\begin_inset Formula $-logP(D|H)-logP(H)$
+\end_inset
+
+ = 
+\end_layout
+
+\begin_layout Standard
+- (the log universal probability of the model + the log of the probability
+ of the data given the model)
+\end_layout
+
+\begin_layout Standard
+Ideal 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+MDL
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+: 
+\begin_inset Formula $K(H)+K(D|H)$
+\end_inset
+
+ (use universal prior)
+\end_layout
+
+\begin_layout Standard
+Real MDL: 
+\begin_inset Formula $-logP(D|H)-logP(H)$
+\end_inset
+
+, 
+\begin_inset Formula $P(D|H)$
+\end_inset
+
+ must be computable.
+ (Applied statistical version of MDL, use Shannon-Frano code as the approximatio
+n of the non-computable Kolmogrov complexity)
+\end_layout
+
+\begin_layout Standard
+The Shannon-Frano code assigns code words of 
+\begin_inset Formula $length\stackrel{+}{=}-logP(.)$
+\end_inset
+
+ to elements randomly drawn according to a probability 
+\begin_inset Formula $P(.)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $-logP(H)$
+\end_inset
+
+: the length, in bits, of the description of the theory, 
+\begin_inset Formula $=K(H)$
+\end_inset
+
+, provided that 
+\begin_inset Formula $-logP(H)\stackrel{+}{=}-logm(H)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $-logP(D|H)$
+\end_inset
+
+: the length, in bits, of data when encoded with the help of the theory,
+ 
+\begin_inset Formula $=K(D|H)$
+\end_inset
+
+ provided that 
+\begin_inset Formula $-logP(D|H)\stackrel{+}{=}-logm(D|H)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Quotes eld
+\end_inset
+
+typical
+\begin_inset Quotes erd
+\end_inset
+
+ outcomes, 
+\begin_inset Formula $K(D|H)\stackrel{+}{=}-logP(D|H)$
+\end_inset
+
+ means that the classic Shannon-Frano code length reaches the prefix Kolmogorov
+ complexity on these data samples.
+ (Under the assumption that the data sample is typical for the contemplated
+ hypotheses, the ideal MDL principal and the applied statistical one coincide,
+ and moreover, both are valid for a set of data samples of Lebesgue measure
+ one.)
+\end_layout
+
+\end_body
+\end_document

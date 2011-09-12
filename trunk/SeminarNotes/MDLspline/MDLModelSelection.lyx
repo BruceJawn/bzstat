@@ -1,0 +1,758 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+--------------------------------
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+Model selection by the MDL principle
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+data: 
+\begin_inset Formula $\{x_{i},y_{i}\}_{i=1}^{n},y_{i}=f(x_{i})+\epsilon_{i},\epsilon_{i}\sim iidN(0,\sigma^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f$
+\end_inset
+
+ can be well approximated by 
+\begin_inset Formula $r$
+\end_inset
+
+-order regression spline with 
+\begin_inset Formula $m$
+\end_inset
+
+ knots: 
+\begin_inset Formula $f(x)\approx b_{0}+b_{1}x+\cdots+b_{r}x^{r}+\Sigma_{j=1}^{m}\beta_{j}(x-k_{j})_{+}^{r}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{j}$
+\end_inset
+
+: location of the 
+\begin_inset Formula $j$
+\end_inset
+
+th knot
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{b_{0},\cdots,b_{r},\beta_{1},\cdots,\beta_{m}\}$
+\end_inset
+
+: set of the coefficients
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(a)_{+}=max(0,a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(a)_{+}^{c}=((a)_{+})^{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+assume 
+\begin_inset Formula $min(x_{i})<k_{1}<\cdots<k_{m}<max(x_{i})$
+\end_inset
+
+ and 
+\begin_inset Formula $\{k_{1},\cdots,k_{m}\}$
+\end_inset
+
+ is subset of 
+\begin_inset Formula $\{x_{1},\cdots,x_{m}\}$
+\end_inset
+
+ (Different from P-Splines!!!)
+\end_layout
+
+\begin_layout Standard
+estimation of 
+\begin_inset Formula $f$
+\end_inset
+
+ can be transformed into a model selection problem with each plausible model
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+completely specified by 
+\begin_inset Formula $\theta=\{r,m,k,b,\beta\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+note that different 
+\begin_inset Formula $\theta$
+\end_inset
+
+'s may have different dimensions (number of parameters)
+\end_layout
+
+\begin_layout Standard
+Let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x=(x_{1},\cdots,x_{n})^{T}$
+\end_inset
+
+, 
+\begin_inset Formula $y=(y_{1},\cdots,y_{n})^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $M=(XZ)=(1,x,\cdots,x^{\hat{r}},(x-\hat{k_{1}}1_{n\times1})_{+}^{\hat{r}},\cdots,(x-\hat{k}_{\hat{m}}1)_{+}^{\hat{r}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+regression spline
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+the natural estimates(maximum likelihood estimates conditional on 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+) of 
+\begin_inset Formula $b$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\hat{b}^{T},\hat{\beta}^{T})^{T}=(M^{T}M)^{-1}M^{T}y$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+we estimate 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and hence 
+\begin_inset Formula $f$
+\end_inset
+
+ nu minimizing the 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $MDL(\hat{\theta})=\begin{cases}
+\begin{array}{cc}
+log\hat{m}+\Sigma_{j=1}^{\hat{m}}log\hat{l_{j}}+\frac{1}{2}\Sigma_{j=1}^{\hat{m}+1}log\hat{l_{j}}+\frac{n}{2}log\{\frac{RSS(\hat{\theta})}{n}\} & \hat{r}=0,\\
+log\hat{m}+\Sigma_{j=1}^{\hat{m}}log\hat{l_{j}}+\frac{\hat{m}+\hat{r}+1}{2}logn+\frac{n}{2}log\{\frac{RSS(\hat{\theta})}{n}\} & \hat{r}\geq1.\end{array}\end{cases}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+smoothing spline/penalized spline
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\hat{b}^{T},\hat{\beta}^{T})^{T}=(M^{T}M+\frac{1}{\lambda}D)^{-1}M^{T}y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+consider a set of normal models of form 
+\begin_inset Formula $y|b_{\eta}\sim N(X_{\eta}\beta_{\eta}+Z_{\eta}b_{\eta},\sigma^{2}I_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\eta$
+\end_inset
+
+:index of the set of candidate models
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{\eta}$
+\end_inset
+
+: 
+\begin_inset Formula $n\times r_{\eta}$
+\end_inset
+
+matrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z_{\eta}$
+\end_inset
+
+: 
+\begin_inset Formula $n\times m_{\eta}$
+\end_inset
+
+matrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta_{\eta}$
+\end_inset
+
+: 
+\begin_inset Formula $r_{\eta}\times1$
+\end_inset
+
+parameter vector
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b_{\eta}$
+\end_inset
+
+: 
+\begin_inset Formula $m_{\eta}\times1$
+\end_inset
+
+parameter vector
+\end_layout
+
+\begin_layout Standard
+Note that estimates 
+\begin_inset Formula $\beta_{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{\eta}$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\sigma}_{\eta}^{2}$
+\end_inset
+
+ depends on the parameter 
+\begin_inset Formula $\lambda\in[0,\infty]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we specify a model by giving the pair 
+\begin_inset Formula $\gamma=(\eta,\lambda)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+assume response data are modelled with a set of density functions 
+\begin_inset Formula $f(y;\gamma,\theta)$
+\end_inset
+
+, where parameter vector 
+\begin_inset Formula $\theta$
+\end_inset
+
+varies within a specified parameter space,
+\end_layout
+
+\begin_layout Standard
+the NML(normalized maximum likelihood) function is defined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{f}(y;\gamma)=\frac{f(y;\gamma,\hat{\theta})}{C(\gamma)}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\theta}=\hat{\theta}(y)$
+\end_inset
+
+ is the ML estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C(\gamma)=\int f(x;\gamma,\hat{\theta}(x))dx$
+\end_inset
+
+ is the normalizing constant.
+\end_layout
+
+\begin_layout Standard
+integral is taken over the sample space
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\hat{f}(y;\gamma)$
+\end_inset
+
+ defines a density function provided that 
+\begin_inset Formula $C(\gamma)$
+\end_inset
+
+ is bounded.
+\end_layout
+
+\begin_layout Standard
+shortest code length:
+\begin_inset Formula $-log\hat{f}(y;\gamma)=-logf(y;\gamma,\hat{\theta})+logC(\gamma)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(y;\gamma,\hat{\theta})=(2\pi)^{-\frac{n}{2}}|\hat{\Sigma}|^{-\frac{1}{2}}exp\{-\frac{1}{2}(y-(X\hat{\beta}+Z\hat{b}))^{T}\hat{\Sigma}{}^{-1}(y-(X\hat{\beta}+Z\hat{b}))\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\hat{\Sigma}=\hat{\sigma^{2}}I$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\sigma^{2}}=n^{-1}||y-\hat{y}||^{2}=n^{-1}||y-(X\hat{\beta}+Z\hat{b})||^{2}=n^{-1}||y-M^{T}\hat{\theta}||^{2}=n^{-1}y^{T}||I-H||^{2}y$
+\end_inset
+
+, 
+\begin_inset Formula $H=(M^{T}M+\frac{1}{\lambda}D)^{-1}M^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+then we have 
+\begin_inset Formula $f(y;\gamma,\hat{\theta})=(2\pi)^{-\frac{n}{2}}|n^{-1}||y-\hat{y}||^{2}I_{n}|^{-\frac{1}{2}}exp\{-\frac{1}{2}trace(I_{n})\}=(2\pi)^{-\frac{n}{2}}\{n^{-1}||y-\hat{y}||^{2}\}^{-\frac{n}{2}}exp\{-\frac{1}{2}n\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $-log_{2}f(y;\gamma,\hat{\theta})=\frac{n}{2}log_{2}(2\pi)+\frac{n}{2}log_{2}\{n^{-1}||y-\hat{y}||^{2}\}+log_{2}\{exp(-\frac{1}{2}n)\}=\frac{n}{2}log_{2}\{\frac{RSS(\hat{\theta})}{n}\}+C$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $RSS(\hat{\theta})=n^{-1}||y-\hat{y}||^{2}=\Sigma_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}$
+\end_inset
+
+ is the residual sum of squares.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C=\frac{n}{2}log_{2}(2\pi)+log_{2}\{exp(-\frac{1}{2}n)\}$
+\end_inset
+
+ is a negligible term.
+\end_layout
+
+\begin_layout Standard
+--------------------------------
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+Knots deletion algorithm
+\end_layout
+
+\begin_layout Standard
+==========
+\end_layout
+
+\begin_layout Standard
+Problem: finding the global minimizer of
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+ is difficult(Due to the complexity of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+)- a global search is infeasible even if 
+\begin_inset Formula $n$
+\end_inset
+
+ is only of moderate size.
+\end_layout
+
+\begin_layout Standard
+Disadvantage: miss the global minimizer 
+\end_layout
+
+\begin_layout Standard
+Advantage: guarantees to find a local minimizer
+\end_layout
+
+\begin_layout Standard
+Algorithm:
+\end_layout
+
+\begin_layout Standard
+1.
+ fixed a value for 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+(spline order, 0,1,2,3), placing(every 
+\begin_inset Formula $s$
+\end_inset
+
+(3~5) sorted values of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s/equally spaced sample quantiles of 
+\begin_inset Formula $x_{1}\cdots x_{n}$
+\end_inset
+
+) a relatively large number(
+\begin_inset Formula $K$
+\end_inset
+
+) of initial knots, (overfitted model) compute 
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ for each knot in all knots, remove this knot, recompute 
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+; choose/delete/record the knot s.t.
+ 
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+1-
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+2=max (greedy strategy)
+\end_layout
+
+\begin_layout Standard
+3.
+ goto 1 until all initial knots are removed
+\end_layout
+
+\begin_layout Standard
+4.
+ choose the one has the smallest 
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+ value with respect to 
+\begin_inset Formula $K$
+\end_inset
+
+ (
+\begin_inset Formula $K+1$
+\end_inset
+
+models in total) as the best fitted model for that fixed value of 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+ change the value of 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+, goto 1 until all candidate values(0,1,2,3) are computed
+\end_layout
+
+\begin_layout Standard
+(5+.change the value of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, goto 1 until all candidate values are computed)
+\end_layout
+
+\begin_layout Standard
+6.
+ chose the model has smallest 
+\begin_inset Formula $MDL(\hat{\theta})$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+(and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+) as the final model
+\end_layout
+
+\begin_layout Standard
+--------------------------------
+\end_layout
+
+\begin_layout Standard
+References:
+\end_layout
+
+\begin_layout Standard
+Books:
+\end_layout
+
+\begin_layout Standard
+[Semiparametric Regression by David Ruppert, M.
+ P.
+ Wand, R.
+ J.
+ Carroll, 2003]
+\end_layout
+
+\begin_layout Standard
+[Longitudinal Data Analysis, Edited by Garrett Fitzmaurice, Marie Davidian,
+ Geert Verbeke & Geert Molenberghs, 2008]
+\end_layout
+
+\begin_layout Standard
+[Stochastic Complexity in Statistical Inquiry, by Jorma Rissanen, World
+ Scientific, 1989]
+\end_layout
+
+\begin_layout Standard
+[Information and Complexity in Statistical Modeling, by Jorma Rissanen,
+ Springer, 2007]
+\end_layout
+
+\begin_layout Standard
+[The Minimum Description Length Principle, by Peter Grünwald, MIT Press,
+ 2007]
+\end_layout
+
+\begin_layout Standard
+Papers:
+\end_layout
+
+\begin_layout Standard
+[Applying MDL To Learning Best Model Granularity, by Q.Gao, M.Li, and P.M.B.Vitanyi,
+ Artificial Intelligence, 2000]
+\end_layout
+
+\begin_layout Standard
+[Comment on Shively, Kohn and Wood, by Babette A.
+ Brumback , David Ruppert , M.
+ P.
+ Wand, Journal of the American Statistical Association, 1999]
+\end_layout
+
+\begin_layout Standard
+[Regression Spline Smoothing Using The Minimum Description Length Principle,
+ by Thomas C.
+ M.
+ Lee, Statistics & Probability Letters, 2000]
+\end_layout
+
+\begin_layout Standard
+[MDL Knot Selection For Penalized Splines, by Antti Liski and Erkki P.
+ Liski, WITMSE, 2008]
+\end_layout
+
+\begin_layout Standard
+[Model Selection In Linear Mixed Models Using MDL Criterion With An Application
+ To Spline Smoothing, by Erkki P.
+ Liski and Antti Liski, WITMSE, 2008]
+\end_layout
+
+\begin_layout Standard
+[http://www.mdl-research.org/]
+\end_layout
+
+\end_body
+\end_document

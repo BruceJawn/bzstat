@@ -1,0 +1,513 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Example 1.
+ (Hypothesis Testing) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H$
+\end_inset
+
+: some model 
+\begin_inset Formula $H(\theta)$
+\end_inset
+
+ with a set of parameter 
+\begin_inset Formula $\theta=\{\theta_{1},\cdots,\theta_{k}\}$
+\end_inset
+
+ of precision 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+number 
+\begin_inset Formula $k$
+\end_inset
+
+ may vary and influence the description complexity of 
+\begin_inset Formula $H(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For example, if we want to determine the distribution of the length of beans,
+ then 
+\begin_inset Formula $H$
+\end_inset
+
+ is a normal distribution 
+\begin_inset Formula $N(\mu,\sigma)$
+\end_inset
+
+ with parameter median 
+\begin_inset Formula $\mu$
+\end_inset
+
+and variation 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ So essentially we have to determine the correct hypothesis described by
+ identifying the type of distribution(normal) and the correct parameter
+ vector 
+\begin_inset Formula $(\mu,\sigma)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In such cased, we minimize 
+\begin_inset Formula $-logP(D|\theta)-logP(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Example 2.(Fitting of a 'best' polynomial on 
+\begin_inset Formula $n$
+\end_inset
+
+ given sample points in the 2-dimensional plane.)
+\end_layout
+
+\begin_layout Standard
+For each fixed 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $k=0,\cdots,n-1$
+\end_inset
+
+, let 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ be the best polynomial of degree 
+\begin_inset Formula $k$
+\end_inset
+
+, fitting on points 
+\begin_inset Formula $(x_{i},y_{i})(1\leq i\leq n)$
+\end_inset
+
+, which minimizes the error
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $error(f_{k})=\Sigma_{i=1}^{n}(f_{k}(x_{i})-y_{i})^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assume each coefficient takes 
+\begin_inset Formula $c$
+\end_inset
+
+ bits, so 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ is encoded in 
+\begin_inset Formula $c(k+1)$
+\end_inset
+
+ bits.
+\end_layout
+
+\begin_layout Standard
+Assume 
+\begin_inset Formula $Pr(y_{1},\cdots,y_{n}|f,x_{1},\cdots,x_{n})=\prod exp\{-O[(f(x_{i})-y_{i})^{2}]\}$
+\end_inset
+
+.(measurement with Gaussian/normal errors), so 
+\begin_inset Formula $-log(Pr(y_{1},\cdots,y_{n}|f,x_{1},\cdots,x_{n}))=c'error(f)$
+\end_inset
+
+ for some computable 
+\begin_inset Formula $c'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The MDL principle tells us to choose 
+\begin_inset Formula $f=f_{m}$
+\end_inset
+
+ with 
+\begin_inset Formula $m\in\{0,\cdots,n-1\}$
+\end_inset
+
+, which minimizes 
+\begin_inset Formula $c(m+1)+c'error(f_{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Example 3.(Derivation of code length expression for choosing knots in regression
+ spline smoothing)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(y)=L$
+\end_inset
+
+(fitted model)
+\begin_inset Formula $+L$
+\end_inset
+
+(data given the fitted model)
+\begin_inset Formula $=L(\hat{\theta})+L(y|\hat{\theta})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $L(\hat{\theta})=L(\hat{r})+L(\hat{m})+L(\hat{k}|\hat{m})+L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+code length for 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{m}$
+\end_inset
+
+(
+\begin_inset Formula $L(\hat{r})+L(\hat{m})$
+\end_inset
+
+): 
+\end_layout
+
+\begin_layout Standard
+use 
+\begin_inset Formula $r\in\{0,1,2,3\}$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\begin_inset Formula $L(\hat{r})=-log_{2}\frac{1}{4}=log_{2}4=2$
+\end_inset
+
+ bits, a constant that will be ignored.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{m}$
+\end_inset
+
+ is an integer, 
+\begin_inset Formula $L(\hat{m})=L^{*}(\hat{m})=log_{2}c+log_{2}\hat{m}+log_{2}log_{2}\hat{m}+\cdots$
+\end_inset
+
+, where 
+\begin_inset Formula $c\approx2.865$
+\end_inset
+
+, 
+\begin_inset Formula $L^{*}(\hat{m})\approx log_{2}\hat{m}$
+\end_inset
+
+when 
+\begin_inset Formula $\hat{m}$
+\end_inset
+
+ is reasonably large.
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $L(\hat{r})+L(\hat{m})\approx log_{2}\hat{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+code length for 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+ given 
+\begin_inset Formula $\hat{m}$
+\end_inset
+
+(
+\begin_inset Formula $L(\hat{k}|\hat{m})$
+\end_inset
+
+): 
+\end_layout
+
+\begin_layout Standard
+note that 
+\begin_inset Formula $\{\hat{k_{1}},\dots,\hat{k_{\hat{m}}}\}$
+\end_inset
+
+ is restricted to be a subset of 
+\begin_inset Formula $\{x_{1},\cdots,x_{n}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(\hat{k}|\hat{m})=L(\hat{l_{1}},\cdots,\hat{l_{\hat{m}}}|\hat{m})=\Sigma_{j=1}^{\hat{m}}L^{*}(\hat{l_{j}})\approx\Sigma_{j=1}^{\hat{m}}log_{2}\hat{l_{j}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\hat{l_{j}}$
+\end_inset
+
+(integers) is the 
+\begin_inset Formula $j$
+\end_inset
+
+th successive 
+\begin_inset Quotes eld
+\end_inset
+
+index difference
+\begin_inset Quotes erd
+\end_inset
+
+, the number of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s which satisfy 
+\begin_inset Formula $\hat{k_{j-1}}\leq x_{i}<\hat{k_{j}},j=1,\cdots,\hat{m};\hat{k_{0}}=min(x_{i}),\hat{k_{\hat{m}+1}}=max(x_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(complete knowledge of 
+\begin_inset Formula $\hat{l_{1}},\cdots,\hat{l_{\hat{m}}}$
+\end_inset
+
+implies complete knowledge of 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+code length for 
+\begin_inset Formula $\{\hat{b},\hat{\beta}\}$
+\end_inset
+
+ given 
+\begin_inset Formula $\{\hat{r},\hat{m},\hat{k}\}$
+\end_inset
+
+(
+\begin_inset Formula $L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+each of 
+\begin_inset Formula $\{\hat{b},\hat{\beta}\}$
+\end_inset
+
+- 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{b}_{i}$
+\end_inset
+
+ or 
+\begin_inset Formula $\hat{\beta}_{i}$
+\end_inset
+
+,
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ is (conditional) maximum likelihood estimate from 
+\begin_inset Formula $n$
+\end_inset
+
+ data points when 
+\begin_inset Formula $\hat{r}\geq1$
+\end_inset
+
+, so it can be effectively encoded with 
+\begin_inset Formula $\frac{1}{2}log_{2}n$
+\end_inset
+
+ bits.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(\hat{b_{0}})=\cdots=L(\hat{b_{\hat{r}}})=L(\hat{\beta_{1}})=\cdots=L(\hat{\beta_{\hat{m}}})=\frac{1}{2}log_{2}n$
+\end_inset
+
+, so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})=\frac{\hat{r}+\hat{m}+1}{2}log_{2}n$
+\end_inset
+
+, when 
+\begin_inset Formula $\hat{r}\geq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(\hat{b},\hat{\beta}|\hat{r},\hat{m},\hat{k})=\Sigma_{j=1}^{\hat{m}}L$
+\end_inset
+
+(
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $j$
+\end_inset
+
+th estimated height
+\begin_inset Quotes erd
+\end_inset
+
+)
+\begin_inset Formula $=\frac{1}{2}\Sigma_{j=1}^{\hat{m}+1}log_{2}\hat{l_{j}}$
+\end_inset
+
+, when 
+\begin_inset Formula $\hat{r}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+code length for 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $\hat{\theta}=\{\hat{r},\hat{m},\hat{k},\hat{b},\hat{\beta}\}$
+\end_inset
+
+(
+\begin_inset Formula $L(y|\hat{\theta})$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(y|\hat{\theta})=\frac{n}{2}log_{2}\{\frac{RSS(\hat{\theta})}{n}\}+C$
+\end_inset
+
+, where 
+\begin_inset Formula $C$
+\end_inset
+
+ is a negligible term and 
+\begin_inset Formula $RSS(\hat{\theta})=\Sigma\{y_{i}-\hat{f}(x_{i})\}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document
