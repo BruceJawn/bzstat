@@ -1,0 +1,164 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+J.
+ Fan and I.
+ Gijbels <Local Polynomial Modelling and Its Applications>
+\end_layout
+
+\begin_layout Standard
+P273 7.3.1 Partially linear models(partial spline model)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y=\eta_{0}(X)+Z^{T}\beta+\epsilon$
+\end_inset
+
+(7.1.2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=(Z_{1},\cdots,Z_{q})^{T}$
+\end_inset
+
+: vector of covariates
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X$
+\end_inset
+
+: scalar covariate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\eta_{0}(.)$
+\end_inset
+
+: unknown univariate function
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+: q-dimensional parameter vector
+\end_layout
+
+\begin_layout Standard
+(This model is different from linear mixed models in that 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is not random!)
+\end_layout
+
+\begin_layout Standard
+Estimation of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta_{0}(.)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+(1) Penalized likelihood aproach:
+\end_layout
+
+\begin_layout Standard
+min
+\begin_inset Formula $\Sigma_{i=1}^{n}\{Y_{i}-\eta_{0}(X_{i})-Z_{i}^{T}\beta_{0}\}^{2}\omega_{i}+\lambda\int\{\eta_{0}^{''}(x)\}^{2}dx$
+\end_inset
+
+ in 
+\begin_inset Formula $\eta_{0}(.)$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+(7.1.3)
+\end_layout
+
+\begin_layout Standard
+(2) Local polynomial regression:
+\end_layout
+
+\begin_layout Standard
+min 
+\begin_inset Formula $\Sigma_{i=1}^{n}\{Y_{i}-\Sigma_{j=0}^{p}\beta_{j}^{*}(X_{i}-x)^{j}-Z_{i}^{T}\beta_{0}\}^{2}K_{h}(X_{i}-x)$
+\end_inset
+
+ simultaneously in 
+\begin_inset Formula $(\beta_{0}^{*},\cdots,\beta_{p}^{*})^{T}$
+\end_inset
+
+and 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ (7.1.4) 
+\end_layout
+
+\begin_layout Standard
+Problem: if 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ is random, can we still use the two approach and give the estimation of
+ 
+\begin_inset Formula $\beta$
+\end_inset
+
+ as a prediction?
+\end_layout
+
+\end_body
+\end_document
