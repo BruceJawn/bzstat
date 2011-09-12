@@ -1,0 +1,103 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+<Semiparametric Regression> David Ruppert, M.P.
+ Wand, and R.J.
+ Carroll
+\end_layout
+
+\begin_layout Standard
+P75 3.9 General Definition of a Penalized Spline
+\end_layout
+
+\begin_layout Standard
+is 
+\begin_inset Formula $\hat{\beta}^{T}B(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+is the minimizer of 
+\begin_inset Formula $\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$
+\end_inset
+
+, for some symmetric positive semidefinite matrix 
+\begin_inset Formula $D$
+\end_inset
+
+ and scalar 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(1) Spline Model: degree, knot locations, constrains (such as natural spline
+ boundary constrains);
+\end_layout
+
+\begin_layout Standard
+(2) Penalty: form of penalty up to a nonnegtive smoothing parameter
+\end_layout
+
+\begin_layout Standard
+(3) Basis functions: (truncated power functions or B-splines) used to represent
+ the model, used in the computions; (do not affect the fitted curve)
+\end_layout
+
+\begin_layout Standard
+(2+3) Penalty matrix 
+\begin_inset Formula $D$
+\end_inset
+
+: automatically determined once the Penalty(form) and Basis functions have
+ been determined.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,431 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{textcomp}
+\usepackage{amstext}
+\usepackage{esint}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{indentfirst}
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\providecommand*{\perispomeni}{\char126}
+\AtBeginDocument{\DeclareRobustCommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}%
+  \renewcommand{\~}{\perispomeni}%
+}}
+\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+\DeclareFontEncoding{LGR}{}{}
+
+\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\title{Spline Basics - ECNU Seminar Notes}
+\author{Bu Zhou}
+\date{2011,6,21}
+\maketitle
+\begin{document}
+\section{Three different kinds of splines}
+$y=u(t)+\epsilon$,
+
+$\epsilon\sim(N)(0,\sigma^{2}I_{n})$;
+
+$y_{i}=u(t_{i})+\epsilon_{i}$,
+
+$\epsilon_{i}\sim(N)(0,\sigma^{2})$;
+
+\subsection{Interpolating<->Smoothing:} 
+\subsection{Different Splines}
+
+Linear Regression-> Polynomial Regression-> Orthogonal Polynomial Regression-> Piecewise Polynomial Regression
+
+
+\begin{tabular}{|c|c|}
+\hline 
+Linear Regression & Polynomial Regression\tabularnewline
+\hline 
+$Y=X\beta+\epsilon$;$y=\left(\begin{array}{c}
+y_{1}\\
+\vdots\\
+y_{n}\end{array}\right)$,$\beta=\left(\begin{array}{c}
+\beta_{0}\\
+\vdots\\
+\beta_{t}\end{array}\right)$ & \tabularnewline
+\hline 
+$X_{L}=\left(\begin{array}{cccc}
+1 & X_{11} & \cdots & X_{1t}\\
+\vdots & \vdots & \ddots & \vdots\\
+1 & X_{n1} & \cdots & X_{nt}\end{array}\right)$ & $X_{P}=\left(\begin{array}{ccccc}
+1 & x_{1} & x_{1}^{2} & \cdots & x_{1}^{t}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_{n} & x_{n}^{2} & \cdots & x_{n}^{t}\end{array}\right)$\tabularnewline
+\hline 
+ & \tabularnewline
+\hline 
+$M(\beta)=RSS(\beta)=\Sigma_{i=1}^{n}(y_{i}-x_{i}\beta)^{2}$ & $M(\beta)=RSS(\beta)$\tabularnewline
+\hline
+\end{tabular}
+
+\begin{tabular}{|c|}
+\hline 
+Orthogonal Polynomial Regression\tabularnewline
+\hline 
+\tabularnewline
+\hline 
+$X_{O}=\left(\begin{array}{ccccc}
+1 & \varphi_{1}(x_{1}) & \varphi_{2}(x_{1}) & \cdots & \varphi_{t}(x_{1})\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & \varphi_{1}(x_{n}) & \varphi_{2}(x_{n}) & \cdots & \varphi_{t}(x_{n})\end{array}\right)$\tabularnewline
+\hline 
+$X'X$ is a diagonal matrix, for computation convenience\tabularnewline
+\hline 
+$M(\beta)=RSS(\beta)$\tabularnewline
+\hline
+\end{tabular}
+
+\begin{tabular}{|c|}
+\hline 
+Piecewise Polynomial Regression\tabularnewline
+\hline 
+\tabincell{c}{
+partition the domain of $t$ into consequential intervals(add knots),\\
+in each interval use a polynomial to approximate $f$($()_{+}$)}\tabularnewline
+\hline 
+$M=(X_{P}Z)$;$Z=\left(\begin{array}{ccc}
+(x_{1}-\xi_{1})_{+}^{m-1} & \cdots & (x_{1}-\xi_{k})_{+}^{m-1}\\
+\vdots & \ddots & \vdots\\
+(x_{n}-\xi_{1})_{+}^{m-1} & \cdots & (x_{n}-\xi_{k})_{+}^{m-1}\end{array}\right)$;$x_{+}^{r}=\{max(0,x)\}^{r}$\tabularnewline
+\hline 
+need to select knots(number\&location)\tabularnewline
+\hline 
+$M(\beta)=RSS(\beta)$\tabularnewline
+\hline
+\end{tabular}
+\newpage
+\begin{tabular}{|c|}
+\hline 
+Smoothing Spline\tabularnewline
+\hline
+$Y=X\beta_{P}+Zu+\epsilon=\beta B(x)+\epsilon$\tabularnewline
+\hline 
+$B(x)=[B_{1}(x),\cdots,B_{N}(x)]^{T}$, vector of spline basis functions\tabularnewline
+\hline 
+knots are data points, need to select $\alpha$\tabularnewline
+\hline 
+$M(\beta)=\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$;$D=\int_{a}^{b}B^{(q+1)}(x)\{B^{(q+1)}(x)\}^{T}dx$\tabularnewline
+\hline
+\end{tabular}	
+
+\begin{tabular}{|c|}
+\hline 
+Penalized Spline		\tabularnewline
+\hline
+$Y=X\beta_{P}+Zu+\epsilon=\beta B(x)+\epsilon$\tabularnewline
+\hline
+\tabularnewline
+\hline 
+need to select knots and $\alpha$\tabularnewline
+\hline 
+$M(\beta)=\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$\tabularnewline
+\hline
+\end{tabular}	
+
+\section{Regression Spline/Least-square Spline}
+
+$u(t)\sim
+S(t)=\Sigma_{i=1}^{m}\theta_{j}t^{j-1}+\Sigma_{j=1}^{k}\delta_{j}(t-\xi_{j})_{+}^{m-1}$
+
+order: $m$
+
+knots: $\xi_{1},\cdots,\xi_{k}$: $\xi=\{\xi_{1},\cdots,\xi_{k}\}$
+
+coefficients: $\delta_{1},\cdots\delta_{k}$
+
+\subsection{least square spline estimator of $u$}
+
+$u=\Sigma_{j=1}^{m+k}b_{\xi j}x_{j}$, where
+
+$x_{j}(t)=t^{j-1}$, $j=1,\cdots,m$
+
+$x_{m+j}(t)=(t-\xi_{j})_{+}^{m-1}$, $j=1,\cdots,k$$b_{\xi}$: the estimator of 
+
+$\beta=(\theta_{1},\cdots,\theta_{m},\delta_{1},\cdots,\delta_{k})^{T}$,
+
+obtained by minimizing
+$RSS(c;\xi)=\Sigma_{i=1}^{n}(y_{i}-\Sigma_{j=1}^{m+k}c_{j}x_{j}(t))^{2}$,
+
+with respect to $c=(c_{1},\cdots,c_{m+k})^{T}$
+
+$X_{\xi}^{T}X_{\xi}c=X_{\xi}^{T}Y$,$X_{\xi}=\{x_{j}(t_{i})\}i=1,\cdots,n_{j};j=1,\cdots,m+k$;
+
+$b_{\xi}=(X_{\xi}^{T}X_{\xi})^{-1}X_{\xi}Y$
+
+\subsection{selecting $\xi$:} 
+number and location of the knots for the estimator(m=2,3,(4))
+
+1. visual inspection of the data: more knots will be needed where
+$u$ seems to change more rapidly
+
+2. variable projection method: minimizing $RSS(\xi)=\Sigma_{i=1}^{n}(y_{i}-\Sigma_{j=1}^{m+k}b_{\xi j}x_{j}(t_{j}))^{2}$,
+$\xi=\{\xi_{1},\cdots,\xi_{k}\}$arbitrary choice for knots set
+
+3. GCV: data driven choice for both location and number of knots
+
+$\xi(K)=\{\xi_{1},\cdots,\xi_{K}\}$, $GCV[\xi(K)]=\frac{n^{-1}RSS[\xi(K)]}{[1-(m+K)/n]^{2}}$
+
+fixed $K$ ->$\hat{\xi}(K)$ ->$\hat{\xi}(\hat{K})$ -> ...
+
+4. $MDL$
+
+\subsection{Do not admit kernel or series representations}
+
+\subsection{Large sample properties:}
+
+{[}Shanggang Zhou, Douglas A. Wolfe, On derivative estimation in spline
+regression{]}
+
+\section{1.2 Smoothing Spline}
+
+$y_{i}=u(x_{i})+\epsilon_{i}$
+
+$M(\lambda)=\Sigma[y_{i}-\hat{u_{n}}(x_{i})]^{2}+\lambda J(u)$
+
+$J(u)$: roughness penalty(regulation), $=\int[u''(x)]^{2}dx$
+
+\subsection{Definition:}
+Knots: $\xi_{1}<\xi_{2}<\cdot\cdot\cdot<\xi_{k}$ be a set of ordered
+points contained in some interval $(a,b)$.
+
+$M$th-order spline: a piecewise$M\lyxmathsym{\textminus}1$ degree(=order-1)
+polynomial with $M\lyxmathsym{\textminus}2$ continuous derivatives
+at the knots. 
+
+Cubic spline($M=4$): a continuous function $u$ such that (i) $u$
+is a cubic polynomial over $(\xi_{1},\xi_{2}),...$ and (ii) $u$
+has continuous first and second derivatives at the knots.
+
+Natural Spline: a spline that is linear beyond the boundary knots.
+
+\subsection{Theorem:}
+
+The function $u_{n}(x)$ that minimizes $M(\lyxmathsym{\textgreek{l}})$
+with penalty $\int[u''(x)]^{2}dx$ is a natural cubic spline with
+knots at the data points(so there is no need to select the knots,
+all knots are data points, number of knots are the number of observations,
+this is the difference from regression splines). The estimator $u_{n}$
+is called a smoothing spline.
+
+\subsection{Basis:} 
+
+To give an explicit form for $u_{n}$we need to construct a basis
+for the set of splines.
+
+{[}Proofs that they are basis: de Boor, A Practical Guide to Splines
+(revised edition) (2001){]}
+
+Truncated power basis: (convenience for representation)
+
+A basis for the set of cubic splines at knots $\xi$: ${h_{1},...,h_{k+4}}:h_{1}(x)=1,h_{2}(x)=x,h_{3}(x)=x^{2},h_{4}(x)=x^{3},h_{j}(x)=(x\lyxmathsym{\textminus}\xi_{j}\lyxmathsym{\textminus}4)_{+}^{3}$
+for $j=5,...,k+4$. 
+
+$u(x)=\Sigma_{j=1}^{k+4}\beta_{j}h_{j}(x).$
+
+B-spline basis: (convenience for computation)
+
+\subsection{Estimation:}
+
+$\hat{u_{n}}(x)=\Sigma_{i=1}^{N}\hat{\beta_{j}}B_{j}(x)$, $B_{1},\cdots,B_{N}$:
+natural spline basis
+
+$M(\beta)=(Y-B\beta)^{T}(Y-B\beta)+\lambda\beta^{T}\Omega\beta$, 
+
+$\beta=(\hat{\beta_{1}},\cdots,\hat{\beta_{N}})^{T}$
+
+$B_{ij}=B_{j}(x_{i})$
+
+$\Omega_{jk}=\int B_{j}^{''}(x)B_{k}^{''}(x)dx$
+
+we have 
+
+$\hat{\beta}=(B^{T}B+\lambda\Omega)^{-1}B^{T}Y$
+
+\subsection{Selection of $\lambda$}
+
+{[}Randall L. Eubank, Nonparametric Regression and Spline Smoothing,
+P239{]}
+
+1. minimization of unbiased risk criterion $\hat{P}(\lambda)=\frac{1}{n}RSS(u_{\lambda})+\frac{2\hat{\sigma}}{n}trS_{\lambda}$,
+$S_{\lambda}=X(B^{T}B+\lambda\Omega)^{-1}B^{T}$, $\hat{\sigma}:$GSJS
+estimator
+
+2. $CV=n^{-1}\Sigma_{i=1}^{n}[y_{i}-u_{\lambda(i)}t(i)]^{2}$, $u_{\lambda(i)}$:
+estimator when $i$th observation $(t_{i},y_{i})$ deleted from data
+
+3. $GCV=\frac{nRSS(u_{\lambda})}{tr(I-S_{\lambda})}$
+
+4. $MDL$
+
+\subsection{Other properties}Admit kernel/series representations, 
+
+can be interpreted as minimum variance unbiased linear prediction
+pf a class of stochastic process{[}George S. Kimeldorf, Grace Wahba,
+Spline functions and stochastic processes, 1970{]}. 
+
+\subsection{ Large sample properties:}
+
+{[}Randall L. Eubank, Nonparametric Regression and Spline Smoothing,
+P247{]}
+
+$n\to\infty$, $\lambda\to0$; $\lambda$is similar to the bandwidth
+$h$ in kernel estimation
+
+use a global, kernel type approximation for linear smoothing spline
+
+\subsection{Interpretation as splines with penalty:}
+
+{[}Randall L. Eubank, Nonparametric Regression and Spline Smoothing,
+P227{]}
+
+\subsection{Interpretation using Taylor's theorem:}
+
+{[}Randall L. Eubank, Nonparametric Regression and Spline Smoothing,
+P228{]}
+
+\section{1.3 Penalized Spline}
+
+{[}Eilers, Marx, Flexible smoothing with B-splines and penalties{]}:
+relatively large number of knots and a difference penalty on coefficients
+of adjacent B-splines.
+
+differences from Smoothing Spline: (i) less knots (ii) general penalties
+
+\subsection{General Definition of a Penalized Spline:}
+
+is $\hat{\beta}^{T}B(x)$, where $\hat{\beta}$is the minimizer of
+$\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$,
+for some symmetric positive semidefinite matrix $D$ and scalar $\alpha>0$.
+
+\subsection{Steps for applying penalized splines:}
+
+
+(1) Spline Model: degree, knot locations, constrains (such as natural
+spline boundary constrains);
+
+(2) Penalty: form of penalty up to a nonnegtive smoothing parameter
+
+(3) Basis functions: (truncated power functions or B-splines) used
+to represent the model, used in the computations; (do not affect the
+fitted curve)
+
+(2+3) Penalty matrix $D$: automatically determined once the Penalty(form)
+and Basis functions have been determined.
+
+\subsection{Penalized splines in use:}
+
+
+1. Large sample properties:
+
+{[}Gerda Claeskens, Tatyana Krivobokova, Jean D. Opsomer, Asymptotic
+properties of penalized spline estimators{]}
+
+or
+
+{[}Hulin Wu, Hongqi Xue, Arun Kumar, Numerical discretization-based
+estimation methods for ordinary differential equation models via penalized
+spline smoothing{]}
+
+2. Working assumption: nonparameter estimation->parameter estimation
+
+Reason: {[}Yan Yu, David Ruppert, Penalized Spline Estimation for
+Partially Linear Single-Index Models{]}
+
+{[}Yang Bai, Wing K. Fung, Zhong Yi Zhu, Penalized quadratic inference
+functions for single-index models with longitudinal data{]}
+
+$\eta_{0}$:$(R\to R)$ unknown univariate function
+
+suppose $\eta_{0}$ is a $p$th degree spline function with knots
+$\xi_{1},\cdots,\xi_{K}$, spline basis $B(x)=(1,x,\cdots,x^{p},(x-\xi_{1})_{+}^{p},\cdots,(x-\xi_{K})_{+}^{p})^{T}$
+
+$\hat{\eta}_{0}\approx B\delta_{0}$, is the best projection of the
+true smoothing function$\eta_{0}$on the space$B\delta$. $\delta_{0}$
+are spline coefficients, spline parameter. We call $\delta_{0}$ the
+{}``true'' parameter.
+
+If there are other parameters($\beta$) to estimate, we represent
+all the parameters as $\theta=(\beta^{T}\delta_{0}^{T})^{T}$
+
+\subsection{selection of knots and $\lambda$}
+
+
+1. {[}David Ruppert, Selecting the Number of Knots For Penalized Splines{]}
+
+{[}David Ruppert, M. P. Wand, R. J. Carroll, Semiparametric Regression{]}
+
+2. $MDL$
+
+\subsection{Penalized spline and shrinkage:}
+
+{[}David Ruppert, M. P. Wand, R. J. Carroll, Semiparametric Regression,
+P74{]}
+
+\section{References:}
+
+\subsection{Books:}
+
+
+Semiparametric Regression by David Ruppert, M. P. Wand, R. J. Carroll,
+2003
+
+Nonparametric Regression and Spline Smoothing, Second Edition, by
+Randall L. Eubank, 1999
+
+All of Nonparametric Statistics, by Larry Wasserman, 2005
+
+A Practical Guide to Splines (revised edition), by Carl de Boor, 2001
+
+The Elements of Statistical Learning: Data Mining, Inference, and
+Prediction. Second Edition, by Trevor Hastie, Robert Tibshirani, Jerome
+Friedman, 2009
+
+\subsection{Papers:}
+
+
+Flexible smoothing with B-splines and penalties, Eilers, Marx, Statistical
+Science, 1996
+
+Spline functions and stochastic processes, George S. Kimeldorf, Grace
+Wahba, The Indian Journal of Statistics, 1970
+
+On derivative estimation in spline regression, Shanggang Zhou, Douglas
+A. Wolfe, Statistica Sinica, 2000
+
+Asymptotic properties of penalized spline estimators, Gerda Claeskens,
+Tatyana Krivobokova, Jean D. Opsomer, Biometrika, 2009,
+
+Numerical discretization-based estimation methods for ordinary differential
+equation models via penalized spline smoothing, Hulin Wu, Hongqi Xue,
+Arun Kumar, submitted to the Annals of Statistics 
+
+Penalized Spline Estimation for Partially Linear Single-Index Models,
+Yan Yu, David Ruppert, Journal of the American Statistical Association,
+2002 
+
+Penalized quadratic inference functions for single-index models with
+longitudinal data, Yang Bai, Wing K. Fung, Zhong Yi Zhu, Multivariate
+Analysis, 2009
+
+Selecting the Number of Knots For Penalized Splines, David Ruppert,
+2000
+\end{document}

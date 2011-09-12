@@ -1,0 +1,1483 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+1.
+ Three different kinds of splines
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y=u(t)+\epsilon$
+\end_inset
+
+,
+\begin_inset Formula $\epsilon\sim(N)(0,\sigma^{2}I_{n})$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y_{i}=u(t_{i})+\epsilon_{i}$
+\end_inset
+
+,
+\begin_inset Formula $\epsilon_{i}\sim(N)(0,\sigma^{2})$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+Interpolating<->Smoothing: 
+\end_layout
+
+\begin_layout Standard
+Linear Regression-> Polynomial Regression-> Orthogonal Polynomial Regression->
+ Piecewise Polynomial Regression
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Polynomial Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orthogonal Polynomial Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Piecewise Polynomial Regression
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=X\beta+\epsilon$
+\end_inset
+
+;
+\begin_inset Formula $y=\left(\begin{array}{c}
+y_{1}\\
+\vdots\\
+y_{n}\end{array}\right)$
+\end_inset
+
+,
+\begin_inset Formula $\beta=\left(\begin{array}{c}
+\beta_{0}\\
+\vdots\\
+\beta_{t}\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+partition the domain of 
+\begin_inset Formula $t$
+\end_inset
+
+ into consequential intervals(add knots) ,in each interval use a polynomial
+ to approximate 
+\begin_inset Formula $f$
+\end_inset
+
+(
+\begin_inset Formula $()_{+}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{L}=\left(\begin{array}{cccc}
+1 & X_{11} & \cdots & X_{1t}\\
+\vdots & \vdots & \ddots & \vdots\\
+1 & X_{n1} & \cdots & X_{nt}\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{P}=\left(\begin{array}{ccccc}
+1 & x_{1} & x_{1}^{2} & \cdots & x_{1}^{t}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_{n} & x_{n}^{2} & \cdots & x_{n}^{t}\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{O}=\left(\begin{array}{ccccc}
+1 & \varphi_{1}(x_{1}) & \varphi_{2}(x_{1}) & \cdots & \varphi_{t}(x_{1})\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & \varphi_{1}(x_{n}) & \varphi_{2}(x_{n}) & \cdots & \varphi_{t}(x_{n})\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $M=(X_{P}Z)=\left(\begin{array}{cccccccc}
+1 & x_{1} & x_{1}^{2} & \cdots & x_{1}^{t} & (x_{1}-\xi_{1})_{+}^{m-1} & \cdots & (x_{1}-\xi_{k})_{+}^{m-1}\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_{n} & x_{n}^{2} & \cdots & x_{n}^{t} & (x_{n}-\xi_{1})_{+}^{m-1} & \cdots & (x_{n}-\xi_{k})_{+}^{m-1}\end{array}\right)$
+\end_inset
+
+;
+\begin_inset Formula $x_{+}^{r}=\{max(0,x)\}^{r}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X'X$
+\end_inset
+
+ is a diagonal matrix, for computation convenience
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{P}=\left(\begin{array}{cccc}
+1 & X_{11} & \cdots & X_{1t}\\
+\vdots & \vdots & \ddots & \vdots\\
+1 & X_{n1} & \cdots & X_{nt}\end{array}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $Z=\left(\begin{array}{ccc}
+(x_{1}-\xi_{1})_{+}^{m-1} & \cdots & (x_{1}-\xi_{k})_{+}^{m-1}\\
+\vdots & \ddots & \vdots\\
+(x_{n}-\xi_{1})_{+}^{m-1} & \cdots & (x_{n}-\xi_{k})_{+}^{m-1}\end{array}\right)$
+\end_inset
+
+; need to select knots(number&location)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $M(\beta)=RSS(\beta)=\Sigma_{i=1}^{n}(y_{i}-x_{i}\beta)^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M(\beta)=RSS(\beta)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M(\beta)=RSS(\beta)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M(\beta)=RSS(\beta)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Smoothing Spline
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Penalized Spline		
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $Y=X\beta_{P}+Zu+\epsilon=\beta B(x)+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $Y=X\beta_{P}+Zu+\epsilon=\beta B(x)+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B(x)=[B_{1}(x),\cdots,B_{N}(x)]^{T}$
+\end_inset
+
+, vector of spline basis functions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+knots are data points, need to select 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+need to select knots and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $M(\beta)=\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$
+\end_inset
+
+;
+\begin_inset Formula $D=\int_{a}^{b}B^{(q+1)}(x)\{B^{(q+1)}(x)\}^{T}dx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M(\beta)=\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+	
+\end_layout
+
+\begin_layout Standard
+1.1 Regression Spline/Least-square Spline
+\end_layout
+
+\begin_layout Standard
+1.1.1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u(t)\sim S(t)=\Sigma_{i=1}^{m}\theta_{j}t^{j-1}+\Sigma_{j=1}^{k}\delta_{j}(t-\xi_{j})_{+}^{m-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+order: 
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+knots: 
+\begin_inset Formula $\xi_{1},\cdots,\xi_{k}$
+\end_inset
+
+: 
+\begin_inset Formula $\xi=\{\xi_{1},\cdots,\xi_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+coefficients: 
+\begin_inset Formula $\delta_{1},\cdots\delta_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.1.2 least square spline estimator of 
+\begin_inset Formula $u$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u=\Sigma_{j=1}^{m+k}b_{\xi j}x_{j}$
+\end_inset
+
+, where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{j}(t)=t^{j-1}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,\cdots,m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{m+j}(t)=(t-\xi_{j})_{+}^{m-1}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,\cdots,k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b_{\xi}$
+\end_inset
+
+: the estimator of 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta=(\theta_{1},\cdots,\theta_{m},\delta_{1},\cdots,\delta_{k})^{T}$
+\end_inset
+
+, obtained by minimizing
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RSS(c;\xi)=\Sigma_{i=1}^{n}(y_{i}-\Sigma_{j=1}^{m+k}c_{j}x_{j}(t))^{2}$
+\end_inset
+
+, with respect to 
+\begin_inset Formula $c=(c_{1},\cdots,c_{m+k})^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{\xi}^{T}X_{\xi}c=X_{\xi}^{T}Y$
+\end_inset
+
+, 
+\begin_inset Formula $X_{\xi}=\{x_{j}(t_{i})\}i=1,\cdots,n_{j};j=1,\cdots,m+k$
+\end_inset
+
+; 
+\begin_inset Formula $b_{\xi}=(X_{\xi}^{T}X_{\xi})^{-1}X_{\xi}Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.1.3 selecting 
+\begin_inset Formula $\xi$
+\end_inset
+
+: number and location of the knots for the estimator(m=2,3,(4))
+\end_layout
+
+\begin_layout Standard
+1.
+ visual inspection of the data: more knots will be needed where 
+\begin_inset Formula $u$
+\end_inset
+
+ seems to change more rapidly
+\end_layout
+
+\begin_layout Standard
+2.
+ variable projection method: minimizing 
+\begin_inset Formula $RSS(\xi)=\Sigma_{i=1}^{n}(y_{i}-\Sigma_{j=1}^{m+k}b_{\xi j}x_{j}(t_{j}))^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\xi=\{\xi_{1},\cdots,\xi_{k}\}$
+\end_inset
+
+arbitrary choice for knots set
+\end_layout
+
+\begin_layout Standard
+3.
+ GCV: data driven choice for both location and number of knots
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\xi(K)=\{\xi_{1},\cdots,\xi_{K}\}$
+\end_inset
+
+, 
+\begin_inset Formula $GCV[\xi(K)]=\frac{n^{-1}RSS[\xi(K)]}{[1-(m+K)/n]^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+fixed 
+\begin_inset Formula $K$
+\end_inset
+
+ ->
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\xi}(K)$
+\end_inset
+
+ ->
+\begin_inset Formula $\hat{\xi}(\hat{K})$
+\end_inset
+
+ -> ...
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Formula $MDL$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.1.4 Do not admit kernel or series representations
+\end_layout
+
+\begin_layout Standard
+1.1.5 Large sample properties:
+\end_layout
+
+\begin_layout Standard
+[Shanggang Zhou, Douglas A.
+ Wolfe, On derivative estimation in spline regression]
+\end_layout
+
+\begin_layout Standard
+1.2 Smoothing Spline
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y_{i}=u(x_{i})+\epsilon_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M(\lambda)=\Sigma[y_{i}-\hat{u_{n}}(x_{i})]^{2}+\lambda J(u)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $J(u)$
+\end_inset
+
+: roughness penalty(regulation), 
+\begin_inset Formula $=\int[u''(x)]^{2}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.2.1 Definition:
+\end_layout
+
+\begin_layout Standard
+Knots: 
+\begin_inset Formula $\xi_{1}<\xi_{2}<···<\xi_{k}$
+\end_inset
+
+ be a set of ordered points contained in some interval 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M$
+\end_inset
+
+th-order spline: a piecewise
+\begin_inset Formula $M−1$
+\end_inset
+
+ degree(=order-1) polynomial with 
+\begin_inset Formula $M−2$
+\end_inset
+
+ continuous derivatives at the knots.
+ 
+\end_layout
+
+\begin_layout Standard
+Cubic spline(
+\begin_inset Formula $M=4$
+\end_inset
+
+): a continuous function 
+\begin_inset Formula $u$
+\end_inset
+
+ such that (i) 
+\begin_inset Formula $u$
+\end_inset
+
+ is a cubic polynomial over 
+\begin_inset Formula $(\xi_{1},\xi_{2}),...$
+\end_inset
+
+ and (ii) 
+\begin_inset Formula $u$
+\end_inset
+
+ has continuous first and second derivatives at the knots.
+\end_layout
+
+\begin_layout Standard
+Natural Spline: a spline that is linear beyond the boundary knots.
+\end_layout
+
+\begin_layout Standard
+1.2.2 Theorem:
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $u_{n}(x)$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $M(λ)$
+\end_inset
+
+ with penalty 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\int[u''(x)]^{2}dx$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ is a natural cubic spline with knots at the data points(so there is no
+ need to select the knots, all knots are data points, number of knots are
+ the number of observations, this is the difference from regression splines).
+ The estimator 
+\begin_inset Formula $u_{n}$
+\end_inset
+
+ is called a smoothing spline.
+\end_layout
+
+\begin_layout Standard
+1.2.3 Basis: 
+\end_layout
+
+\begin_layout Standard
+To give an explicit form for 
+\begin_inset Formula $u_{n}$
+\end_inset
+
+we need to construct a basis for the set of splines.
+\end_layout
+
+\begin_layout Standard
+[Proofs that they are basis: de Boor, A Practical Guide to Splines (revised
+ edition) (2001)]
+\end_layout
+
+\begin_layout Standard
+Truncated power basis: (convenience for representation)
+\end_layout
+
+\begin_layout Standard
+A basis for the set of cubic splines at knots 
+\begin_inset Formula $\xi$
+\end_inset
+
+: 
+\begin_inset Formula ${h_{1},...,h_{k+4}}:h_{1}(x)=1,h_{2}(x)=x,h_{3}(x)=x^{2},h_{4}(x)=x^{3},h_{j}(x)=(x−\xi_{j}−4)_{+}^{3}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=5,...,k+4$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u(x)=\Sigma_{j=1}^{k+4}\beta_{j}h_{j}(x).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+B-spline basis: (convenience for computation)
+\end_layout
+
+\begin_layout Standard
+1.2.4 Estimation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{u_{n}}(x)=\Sigma_{i=1}^{N}\hat{\beta_{j}}B_{j}(x)$
+\end_inset
+
+, 
+\begin_inset Formula $B_{1},\cdots,B_{N}$
+\end_inset
+
+: natural spline basis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M(\beta)=(Y-B\beta)^{T}(Y-B\beta)+\lambda\beta^{T}\Omega\beta$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta=(\hat{\beta_{1}},\cdots,\hat{\beta_{N}})^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B_{ij}=B_{j}(x_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega_{jk}=\int B_{j}^{''}(x)B_{k}^{''}(x)dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\beta}=(B^{T}B+\lambda\Omega)^{-1}B^{T}Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.2.5 Selection of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[Randall L.
+ Eubank, Nonparametric Regression and Spline Smoothing, P239]
+\end_layout
+
+\begin_layout Standard
+1.
+ minimization of unbiased risk criterion 
+\begin_inset Formula $\hat{P}(\lambda)=\frac{1}{n}RSS(u_{\lambda})+\frac{2\hat{\sigma}}{n}trS_{\lambda}$
+\end_inset
+
+, 
+\begin_inset Formula $S_{\lambda}=X(B^{T}B+\lambda\Omega)^{-1}B^{T}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\sigma}:$
+\end_inset
+
+GSJS estimator
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $CV=n^{-1}\Sigma_{i=1}^{n}[y_{i}-u_{\lambda(i)}t(i)]^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $u_{\lambda(i)}$
+\end_inset
+
+: estimator when 
+\begin_inset Formula $i$
+\end_inset
+
+th observation 
+\begin_inset Formula $(t_{i},y_{i})$
+\end_inset
+
+ deleted from data
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $GCV=\frac{nRSS(u_{\lambda})}{tr(I-S_{\lambda})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Formula $MDL$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.2.6 Admit kernel/series representations, 
+\end_layout
+
+\begin_layout Standard
+can be interpreted as minimum variance unbiased linear prediction pf a class
+ of stochastic process[George S.
+ Kimeldorf, Grace Wahba, Spline functions and stochastic processes, 1970].
+ 
+\end_layout
+
+\begin_layout Standard
+1.2.7 Large sample properties:
+\end_layout
+
+\begin_layout Standard
+[Randall L.
+ Eubank, Nonparametric Regression and Spline Smoothing, P247]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda\to0$
+\end_inset
+
+; 
+\begin_inset Formula $\lambda$
+\end_inset
+
+is similar to the bandwidth 
+\begin_inset Formula $h$
+\end_inset
+
+ in kernel estimation
+\end_layout
+
+\begin_layout Standard
+use a global, kernel type approximation for linear smoothing spline
+\end_layout
+
+\begin_layout Standard
+1.2.8 Interpretation as splines with penalty
+\end_layout
+
+\begin_layout Standard
+[Randall L.
+ Eubank, Nonparametric Regression and Spline Smoothing, P227]
+\end_layout
+
+\begin_layout Standard
+1.2.8 Interpretation using Taylor's theorem
+\end_layout
+
+\begin_layout Standard
+[Randall L.
+ Eubank, Nonparametric Regression and Spline Smoothing, P228]
+\end_layout
+
+\begin_layout Standard
+1.3 Penalized Spline
+\end_layout
+
+\begin_layout Standard
+[Eilers, Marx, Flexible smoothing with B-splines and penalties]: relatively
+ large number of knots and a difference penalty on coefficients of adjacent
+ B-splines.
+\end_layout
+
+\begin_layout Standard
+differences from Smoothing Spline: (i) less knots (ii) general penalties
+\end_layout
+
+\begin_layout Standard
+1.3.1 General Definition of a Penalized Spline:
+\end_layout
+
+\begin_layout Standard
+is 
+\begin_inset Formula $\hat{\beta}^{T}B(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+is the minimizer of 
+\begin_inset Formula $\Sigma_{i=1}^{n}\{y_{i}-\beta^{T}B(x_{i})\}^{2}+\alpha\beta^{T}D\beta$
+\end_inset
+
+, for some symmetric positive semidefinite matrix 
+\begin_inset Formula $D$
+\end_inset
+
+ and scalar 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+1.3.2 Steps for applying penalized splines:
+\end_layout
+
+\begin_layout Standard
+(1) Spline Model: degree, knot locations, constrains (such as natural spline
+ boundary constrains);
+\end_layout
+
+\begin_layout Standard
+(2) Penalty: form of penalty up to a nonnegtive smoothing parameter
+\end_layout
+
+\begin_layout Standard
+(3) Basis functions: (truncated power functions or B-splines) used to represent
+ the model, used in the computations; (do not affect the fitted curve)
+\end_layout
+
+\begin_layout Standard
+(2+3) Penalty matrix 
+\begin_inset Formula $D$
+\end_inset
+
+: automatically determined once the Penalty(form) and Basis functions have
+ been determined.
+\end_layout
+
+\begin_layout Standard
+1.3.3 Penalized splines in use:
+\end_layout
+
+\begin_layout Standard
+1.
+ Large sample properties:
+\end_layout
+
+\begin_layout Standard
+[Gerda Claeskens, Tatyana Krivobokova, Jean D.
+ Opsomer, Asymptotic properties of penalized spline estimators]
+\end_layout
+
+\begin_layout Standard
+or
+\end_layout
+
+\begin_layout Standard
+[Hulin Wu, Hongqi Xue, Arun Kumar, Numerical discretization-based estimation
+ methods for ordinary differential equation models via penalized spline
+ smoothing]
+\end_layout
+
+\begin_layout Standard
+2.
+ Working assumption: nonparameter estimation->parameter estimation
+\end_layout
+
+\begin_layout Standard
+Reason: [Yan Yu, David Ruppert, Penalized Spline Estimation for Partially
+ Linear Single-Index Models]
+\end_layout
+
+\begin_layout Standard
+[Yang Bai, Wing K.
+ Fung, Zhong Yi Zhu, Penalized quadratic inference functions for single-index
+ models with longitudinal data]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+:
+\begin_inset Formula $(R\to R)$
+\end_inset
+
+ unknown univariate function
+\end_layout
+
+\begin_layout Standard
+suppose 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ is a 
+\begin_inset Formula $p$
+\end_inset
+
+th degree spline function with knots 
+\begin_inset Formula $\xi_{1},\cdots,\xi_{K}$
+\end_inset
+
+, spline basis 
+\begin_inset Formula $B(x)=(1,x,\cdots,x^{p},(x-\xi_{1})_{+}^{p},\cdots,(x-\xi_{K})_{+}^{p})^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\eta}_{0}\approx B\delta_{0}$
+\end_inset
+
+, is the best projection of the true smoothing function
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+on the space
+\begin_inset Formula $B\delta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+ are spline coefficients, spline parameter.
+ We call 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ parameter.
+\end_layout
+
+\begin_layout Standard
+If there are other parameters(
+\begin_inset Formula $\beta$
+\end_inset
+
+) to estimate, we represent all the parameters as 
+\begin_inset Formula $\theta=(\beta^{T}\delta_{0}^{T})^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.3.4 selection of knots and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ [David Ruppert, Selecting the Number of Knots For Penalized Splines]
+\end_layout
+
+\begin_layout Standard
+[David Ruppert, M.
+ P.
+ Wand, R.
+ J.
+ Carroll, Semiparametric Regression]
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $MDL$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.3.5 Penalized spline and shrinkage:
+\end_layout
+
+\begin_layout Standard
+[David Ruppert, M.
+ P.
+ Wand, R.
+ J.
+ Carroll, Semiparametric Regression, P74]
+\end_layout
+
+\begin_layout Standard
+References:
+\end_layout
+
+\begin_layout Standard
+Books:
+\end_layout
+
+\begin_layout Standard
+Semiparametric Regression by David Ruppert, M.
+ P.
+ Wand, R.
+ J.
+ Carroll, 2003
+\end_layout
+
+\begin_layout Standard
+Nonparametric Regression and Spline Smoothing, Second Edition, by Randall
+ L.
+ Eubank, 1999
+\end_layout
+
+\begin_layout Standard
+All of Nonparametric Statistics, by Larry Wasserman, 2005
+\end_layout
+
+\begin_layout Standard
+A Practical Guide to Splines (revised edition), by Carl de Boor, 2001
+\end_layout
+
+\begin_layout Standard
+The Elements of Statistical Learning: Data Mining, Inference, and Prediction.
+ Second Edition, by Trevor Hastie, Robert Tibshirani, Jerome Friedman, 2009
+\end_layout
+
+\begin_layout Standard
+Papers:
+\end_layout
+
+\begin_layout Standard
+Flexible smoothing with B-splines and penalties, Eilers, Marx, Statistical
+ Science, 1996
+\end_layout
+
+\begin_layout Standard
+Spline functions and stochastic processes, George S.
+ Kimeldorf, Grace Wahba, The Indian Journal of Statistics, 1970
+\end_layout
+
+\begin_layout Standard
+On derivative estimation in spline regression, Shanggang Zhou, Douglas A.
+ Wolfe, Statistica Sinica, 2000
+\end_layout
+
+\begin_layout Standard
+Asymptotic properties of penalized spline estimators, Gerda Claeskens, Tatyana
+ Krivobokova, Jean D.
+ Opsomer, Biometrika, 2009,
+\end_layout
+
+\begin_layout Standard
+Numerical discretization-based estimation methods for ordinary differential
+ equation models via penalized spline smoothing, Hulin Wu, Hongqi Xue, Arun
+ Kumar, submitted to the Annals of Statistics 
+\end_layout
+
+\begin_layout Standard
+Penalized Spline Estimation for Partially Linear Single-Index Models, Yan
+ Yu, David Ruppert, Journal of the American Statistical Association, 2002
+ 
+\end_layout
+
+\begin_layout Standard
+Penalized quadratic inference functions for single-index models with longitudina
+l data, Yang Bai, Wing K.
+ Fung, Zhong Yi Zhu, Multivariate Analysis, 2009
+\end_layout
+
+\begin_layout Standard
+Selecting the Number of Knots For Penalized Splines, David Ruppert, 2000
+\end_layout
+
+\end_body
+\end_document
