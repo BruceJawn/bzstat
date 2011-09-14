@@ -24,6 +24,9 @@ Seminar notes on splines. Basic ides and nodes selection. R program for testing 
    * languages R
    * tools R
 == Pics: ==
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/test.png https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/test.png]
+
+
 
 == Demo: ==
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/test.eps]
