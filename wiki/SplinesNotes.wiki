@@ -1,0 +1,42 @@
+#summary Seminar notes on splines.
+
+= Splines Notes =
+
+Add your content here.
+
+
+== Status: ==
+
+||v? Released!|| 
+
+== Description: ==
+Seminar notes on splines. Basic ides and nodes selection. R program for testing various spline package in R, such as loess, smooth.spline, pspline, SemiPar, Polynomial and LS Spline. 
+
+== Features: ==
+
+== Todos: ==
+
+== License: ==
+
+||Open Source/MIT||
+
+== Labels: ==
+   * languages R
+   * tools R
+== Pics: ==
+
+== Demo: ==
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/test.eps]
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/testtable.html]
+
+== Source: ==
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics]
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/]
+R code: a clean version for testing various spline pacakge:
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/splines.r]
+A more advanced version based on BSWF pacakge v0.01(Bruce's Statistical Simulation Work Flow):
+[https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines]
+
+== Blog Posts: ==
+
+== Links: ==
