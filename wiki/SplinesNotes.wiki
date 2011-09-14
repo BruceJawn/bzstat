@@ -27,14 +27,20 @@ Seminar notes on splines. Basic ides and nodes selection. R program for testing 
 
 == Demo: ==
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/test.eps]
+
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines/testtable.html]
 
 == Source: ==
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics]
+
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/]
+
 R code: a clean version for testing various spline pacakge:
+
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/splines.r]
+
 A more advanced version based on BSWF pacakge v0.01(Bruce's Statistical Simulation Work Flow):
+
 [https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics/code/BSWFsplines]
 
 == Blog Posts: ==
