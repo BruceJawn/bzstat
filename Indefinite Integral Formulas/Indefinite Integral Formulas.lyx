@@ -1,0 +1,1437 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Some Basic Indefinite Integral Formulas
+\end_layout
+
+\begin_layout Standard
+By Bruce Zhou
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.
+
+\series default
+ 
+\begin_inset Formula $\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+c$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha\neq1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{x}dx=ln|x|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.
+
+\series default
+ 
+\begin_inset Formula $\int e^{x}dx=e^{x}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4.
+
+\series default
+ 
+\begin_inset Formula $\int a^{x}dx=\frac{a^{x}}{lna}+c$
+\end_inset
+
+, 
+\begin_inset Formula $(a>0,a\neq1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.
+
+\series default
+ 
+\begin_inset Formula $\int cosxdx=sinx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6.
+
+\series default
+ 
+\begin_inset Formula $\int sinxdx=-cosx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{cos^{2}x}dx=tanx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{sin^{2}x}dx=-cotx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{\sqrt{1-x^{2}}}arcsinx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{1+x^{2}}dx=arctanx+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{a^{2}+x^{2}}dx=\frac{1}{a}arctan\frac{x}{a}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: 
+\begin_inset Formula $\int\frac{1}{a^{2}+x^{2}}dx=\frac{a}{a^{2}}\int\frac{1}{(\frac{x}{a})^{2}+1}d\frac{x}{a}$
+\end_inset
+
+, use 10.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{\sqrt{a^{2}-x^{2}}}dx=arcsin\frac{x}{a}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: 
+\begin_inset Formula $\int\frac{1}{\sqrt{a^{2}-x^{2}}}dx=\int\frac{dx}{a\sqrt{1-(\frac{x}{a})^{2}}}=\int\frac{d\frac{x}{a}}{\sqrt{1-(\frac{x}{a})^{2}}}$
+\end_inset
+
+, use 9.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13
+\series default
+(a).
+ 
+\begin_inset Formula $\int\frac{1}{a^{2}-x^{2}}dx=\frac{1}{2a}ln|\frac{a+x}{a-x}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\int\frac{1}{a^{2}-x^{2}}dx=\int\frac{dx}{(a-x)(a+x)}=\frac{1}{2a}\int(\frac{1}{a-x}+\frac{1}{a+x})dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 2, 
+\begin_inset Formula $=\frac{1}{2a}(-ln|a-x|+ln|a+x|)+c=\frac{1}{2a}ln|\frac{a+x}{a-x}|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similarly, we have
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13
+\series default
+(b).
+ 
+\begin_inset Formula $\int\frac{1}{x^{2}-a^{2}}dx=\frac{1}{2a}ln|\frac{x-a}{x+a}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: 
+\begin_inset Formula $\int\frac{1}{x^{2}-a^{2}}dx=\int\frac{dx}{(x-a)(x+a)}=\frac{1}{2a}\int(\frac{1}{x-a}-\frac{1}{x+a})dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{2a}(ln|x-a|-ln|x+a|)+c=\frac{1}{2a}ln|\frac{x-a}{x+a}|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{\sqrt{x^{2}+a^{2}}}dx=ln|x+\sqrt{x^{2}+a^{2}}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: Let 
+\begin_inset Formula $x=arctant$
+\end_inset
+
+, then 
+\begin_inset Formula $dx=a\times sec^{2}tdt$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{x^{2}+a^{2}}=a\times sect$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so left side 
+\begin_inset Formula $=\int\frac{1}{asect}a\times sec^{2}tdt=\int\frac{1}{cost}dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 20, 
+\begin_inset Formula $=ln|tan(\frac{t}{2}+\frac{\pi}{4})|+c=ln|sect+tant|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=ln|x+\sqrt{x^{2}+a^{2}}|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: Some basic triangular transformation for square root type integrals:
+\end_layout
+
+\begin_layout Standard
+(I)sin/cos type 
+\begin_inset Formula $\sqrt{a^{2}-x^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+let 
+\begin_inset Formula $x=a\times sin\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=a\times cos\theta$
+\end_inset
+
+; or 
+\begin_inset Formula $x=a\times cos\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=-asin\theta d\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $sin^{2}\theta+cos^{2}\theta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(II)sec/csc type 
+\begin_inset Formula $\sqrt{x^{2}-a^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+let 
+\begin_inset Formula $x=a\times sec\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=a\times sec\theta tan\theta d\theta$
+\end_inset
+
+; or 
+\begin_inset Formula $x=a\times csc\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=-a\times csc\theta cot\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $sec^{2}\theta=1+tan^{2}\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(III)tan/cot type 
+\begin_inset Formula $\sqrt{x^{2}+a^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+let 
+\begin_inset Formula $x=a\times tan\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=a\frac{1}{cos^{2}\theta}$
+\end_inset
+
+; or 
+\begin_inset Formula $x=a\times cot\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=-a\frac{1}{sin^{2}\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It's easy to use a right triangle to see the relationships.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename tri.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $sin\alpha=\frac{a}{c}$
+\end_inset
+
+, 
+\begin_inset Formula $cos\alpha=\frac{b}{c}$
+\end_inset
+
+, 
+\begin_inset Formula $tan\alpha=\frac{a}{b}$
+\end_inset
+
+, 
+\begin_inset Formula $cot\alpha=\frac{b}{c}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $sec\alpha=\frac{1}{cos\alpha}=\frac{c}{b}$
+\end_inset
+
+, 
+\begin_inset Formula $csc\alpha=\frac{1}{sin\alpha}=\frac{c}{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(cscx)'=-cscxcotx$
+\end_inset
+
+, 
+\begin_inset Formula $(secx)'=secxtanx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(IV)
+\begin_inset Formula $^{m}\sqrt{ax+b}=t$
+\end_inset
+
+, 
+\begin_inset Formula $x=\frac{t^{m}-b}{a}$
+\end_inset
+
+, 
+\begin_inset Formula $dx=\frac{1}{a}mt^{m-1}dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(V)
+\begin_inset Formula $^{m}\sqrt{x}$
+\end_inset
+
+, 
+\begin_inset Formula $x=t^{m}$
+\end_inset
+
+, 
+\begin_inset Formula $dx=mt^{m-1}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $^{m}\sqrt{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $^{n}\sqrt{x}$
+\end_inset
+
+, let 
+\begin_inset Formula $t=^{mn}\sqrt{x}$
+\end_inset
+
+, so 
+\begin_inset Formula $^{m}\sqrt{x}=t^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $^{n}\sqrt{x}=t^{m}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $dx=dt^{mn}=(mn)t^{mn-1}dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{\sqrt{x^{2}-a^{2}}}dx=ln|x+\sqrt{x^{2}-a^{2}}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: let 
+\begin_inset Formula $x=a\times sect$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{x^{2}-a^{2}}=a\times tant$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $dx=d(a\times sect)=a\frac{sint}{cos^{2}t}dt=a\times sect\times tant\times dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+left side 
+\begin_inset Formula $=\int\frac{a\times sect\times tant}{a\times tant}dt=\int\frac{dt}{cost}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 20, 
+\begin_inset Formula $=ln|sect+tant|+c=ln|\frac{x}{a}+\frac{\sqrt{x^{2}-a^{2}}}{a}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=ln|x+\sqrt{x^{2}-a^{2}}|-lna+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\begin_inset Formula $\int\frac{1}{(x^{2}-a^{2})^{\frac{3}{2}}}dx=-\frac{x}{a^{2}\sqrt{x^{2}-a^{2}}}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: let 
+\begin_inset Formula $x=asec\theta$
+\end_inset
+
+, 
+\begin_inset Formula $dx=ad\frac{1}{cos\theta}=a\frac{sin\theta}{cos^{2}\theta}d\theta$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(x^{2}-a^{2})^{\frac{3}{2}}=(a^{2}tan^{2}\theta)^{\frac{3}{2}}=a^{3}tan^{3}\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+left side 
+\begin_inset Formula $=\frac{a\frac{sin\theta}{cos^{2}\theta}d\theta}{a^{3}tan^{3}\theta}=\frac{1}{a^{2}}\frac{cos\theta}{sin^{2}\theta}d\theta=\frac{1}{a^{2}}\frac{dsin\theta}{sin^{2}\theta}=-\frac{1}{a^{2}}\frac{1}{sin\theta}=-\frac{x}{a^{2}\sqrt{x^{2}-a^{2}}}+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+16.
+
+\series default
+ 
+\begin_inset Formula $\int\sqrt{a^{2}-x^{2}}dx=\frac{1}{2}x\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}arcsin\frac{x}{a}+c$
+\end_inset
+
+, 
+\begin_inset Formula $(x^{2}\leq a^{2}\Rightarrow-a\leq x\leq a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf(a): let 
+\begin_inset Formula $x=asint$
+\end_inset
+
+, 
+\begin_inset Formula $dx=acostdt$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{a^{2}-x^{2}}=acost$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+left side 
+\begin_inset Formula $=\int acostacostdt=a^{2}\int cos^{2}tdt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{a^{2}}{2}\int(cos2t+1)dt=\frac{a^{2}}{2}(\frac{1}{2}sin2t+t)+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $sin2t=2sintcost=2\frac{x}{a}\frac{\sqrt{a^{2}-x^{2}}}{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $=\frac{1}{2}x\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}arcsin\frac{x}{a}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf(b): integral by parts, left side 
+\begin_inset Formula $=x\sqrt{a^{2}-x^{2}}-\int xd\sqrt{a^{2}-x^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=x\sqrt{a^{2}-x^{2}}-\int\frac{-2x^{2}\times\frac{1}{2}}{\sqrt{a^{2}-x^{2}}}dx=x\sqrt{a^{2}-x^{2}}-\int\frac{-x^{2}}{\sqrt{a^{2}-x^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+note that for 
+\begin_inset Formula $\frac{-x^{2}}{\sqrt{a^{2}-x^{2}}}$
+\end_inset
+
+, the degree of numerator is higher than the degree of denominator,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int\frac{-x^{2}}{\sqrt{a^{2}-x^{2}}}dx=\int\frac{a^{2}-x^{2}-a^{2}}{\sqrt{a^{2}-x^{2}}}dx$
+\end_inset
+
+, so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int\sqrt{a^{2}-x^{2}}dx=x\sqrt{a^{2}-x^{2}}-\int\sqrt{a^{2}-x^{2}}dx+\int\frac{a^{2}}{\sqrt{a^{2}-x^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+move the term 
+\begin_inset Formula $\int\sqrt{a^{2}-x^{2}}dx$
+\end_inset
+
+ from right side to left side, we have
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\int\sqrt{a^{2}-x^{2}}dx=\frac{1}{2}x\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\int\frac{1}{\sqrt{a^{2}-x^{2}}}dx$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+now use 12, we get 
+\begin_inset Formula $\int\sqrt{a^{2}-x^{2}}dx=\frac{1}{2}x\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}arcsin\frac{x}{a}+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17.
+
+\series default
+ 
+\begin_inset Formula $\int\sqrt{x^{2}-a^{2}}dx=\frac{1}{2}x\sqrt{x^{2}-a^{2}}-\frac{a^{2}}{2}ln|x+\sqrt{x^{2}-a^{2}}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: integral by parts, left side 
+\begin_inset Formula $=x\sqrt{x^{2}-a^{2}}-\int\frac{\frac{1}{2}2xx}{\sqrt{x^{2}-a^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=x\sqrt{x^{2}-a^{2}}-\int\frac{x^{2}}{\sqrt{x^{2}-a^{2}}}dx=x\sqrt{x^{2}-a^{2}}-\int\frac{x^{2}-a^{2}+a^{2}}{\sqrt{x^{2}-a^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=x\sqrt{x^{2}-a^{2}}-\int\sqrt{x^{2}-a^{2}}dx-\int\frac{a^{2}}{\sqrt{x^{2}-a^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $\int\sqrt{x^{2}-a^{2}}dx=x\sqrt{x^{2}-a^{2}}-\int\sqrt{x^{2}-a^{2}}dx-\int\frac{a^{2}}{\sqrt{x^{2}-a^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int\sqrt{x^{2}-a^{2}}dx=\frac{1}{2}x\sqrt{x^{2}-a^{2}}-\frac{a^{2}}{2}\int\frac{1}{\sqrt{x^{2}-a^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 15.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{x}{2}\sqrt{x^{2}-a^{2}}-\frac{a^{2}}{2}ln|x+\sqrt{x^{2}-a^{2}}|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+18.
+
+\series default
+ 
+\begin_inset Formula $\int\sqrt{x^{2}+a^{2}}dx=\frac{1}{2}x\sqrt{x^{2}+a^{2}}+\frac{a^{2}}{2}ln|x+\sqrt{x^{2}+a^{2}}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: integral by parts, left side 
+\begin_inset Formula $=x\sqrt{a^{2}+x^{2}}-\int xd\sqrt{a^{2}+x^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=x\sqrt{a^{2}+x^{2}}-\int\frac{x^{2}}{\sqrt{a^{2}+x^{2}}}dx=x\sqrt{a^{2}+x^{2}}-\int\sqrt{a^{2}+x^{2}}dx+\int\frac{a^{2}}{\sqrt{a^{2}+x^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $\int\sqrt{x^{2}+a^{2}}dx=\frac{1}{2}x\sqrt{a^{2}+x^{2}}+\frac{1}{2}\int\frac{a^{2}}{\sqrt{a^{2}+x^{2}}}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 14.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{2}x\sqrt{a^{2}+x^{2}}+\frac{a^{2}}{2}ln|x+\sqrt{x^{2}+a^{2}}|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+19.
+
+\series default
+ 
+\begin_inset Formula $\int cscxdx=\int\frac{1}{sinx}dx=ln|tan\frac{x}{2}|+c=ln|cscx-cotx|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+left side 
+\begin_inset Formula $=\int\frac{dx}{2sin\frac{x}{2}cos\frac{x}{2}}=\int\frac{dx}{\frac{sin\frac{x}{2}}{cos\frac{x}{2}}2cos^{2}\frac{x}{2}}=\int\frac{dtan\frac{x}{2}}{tan\frac{x}{2}}=ln|tan\frac{x}{2}|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $tan\frac{x}{2}=\frac{sin\frac{x}{2}}{cos\frac{x}{2}}=\frac{2sin^{2}\frac{x}{2}}{2cos\frac{x}{2}sin\frac{x}{2}}=\frac{1-cosx}{sinx}=cscx-cotx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similarly, we have 
+\begin_inset Formula $\int\frac{1}{sinxcosx}dx=\int\frac{cotx}{cos^{2}x}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\int\frac{1}{tanx}dtanx=ln|tanx|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+20.
+
+\series default
+ 
+\begin_inset Formula $\int secxdx=\int\frac{1}{cos}dx=ln|tan(\frac{x}{2}+\frac{\pi}{4})|+c=ln|secx+tanx|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: left side 
+\begin_inset Formula $=\int\frac{d(x+\frac{\pi}{2})}{sin(x+\frac{\pi}{2})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 19.
+ 
+\begin_inset Formula $=ln|tan(\frac{x}{2}+\frac{\pi}{4})|+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $tan(\frac{x}{2}+\frac{\pi}{4})=\frac{tan\frac{x}{2}+1}{1-tan\frac{x}{2}}=\frac{sin\frac{x}{2}+cos\frac{x}{2}}{cos\frac{x}{2}-sin\frac{x}{2}}=\frac{(sin\frac{x}{2}+cos\frac{x}{2})^{2}}{cos^{2}\frac{x}{2}-sin^{2}\frac{x}{2}}=\frac{1+sinx}{cosx}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+21.
+
+\series default
+ 
+\begin_inset Formula $\int tanxdx=\int\frac{sinx}{cosx}dx=\int\frac{-dcosx}{cosx}=-ln|cosx|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+22.
+
+\series default
+ 
+\begin_inset Formula $\int cotxdx=\int\frac{cosx}{sinx}dx=\int\frac{dsinx}{sinx}=ln|sinx|+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+23.
+
+\series default
+ 
+\begin_inset Formula $\int tan^{2}xdx=\int(sec^{2}x-1)dx=tanx-x+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+24.
+
+\series default
+ 
+\begin_inset Formula $\int cot^{2}xdx=\int(csc^{2}x-1)dx=-cotx-x+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+25.
+
+\series default
+ 
+\begin_inset Formula $\int e^{ax}sin(bx)dx=\frac{e^{ax}(asin(bx)-bcos(bx))}{a^{2}+b^{2}}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: integral by parts, left side 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{a}\int sin(bx)de^{ax}=\frac{1}{a}(sin(bx)e^{ax}-\int be^{ax}cos(bx)dx)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $\int be^{ax}cos(bx)dx=\frac{b}{a}\int cos(bx)de^{ax}=\frac{b}{a}(cos(bx)e^{ax}-\int e^{ax}dcos(bx))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{b}{a}(cos(bx)e^{ax}+b\int e^{ax}sin(bx)dx)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $\int e^{ax}sin(bx)dx=\frac{1}{a}(sin(bx)e^{ax}-\frac{b}{a}(cos(bx)e^{ax}+b\int e^{ax}sin(bx)dx))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\int e^{ax}sin(bx)dx=sin(bx)e^{ax}-\frac{b}{a}cos(bx)e^{ax}-\frac{b^{2}}{a}\int e^{ax}sin(bx)dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(a+\frac{b^{2}}{a})\int e^{ax}sin(bx)dx=sin(bx)e^{ax}-\frac{b}{a}cos(bx)e^{ax}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int e^{ax}sin(bx)dx=\frac{1}{a^{2}+b^{2}}(asin(bx)e^{ax}-bcos(bx)e^{ax})+c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+26.
+
+\series default
+ 
+\begin_inset Formula $\int e^{ax}cos(bx)dx=\frac{e^{ax}(bsin(bx)+acos(bx))}{a^{2}+b^{2}}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: left side 
+\begin_inset Formula $=\frac{1}{a}\int cos(bx)de^{ax}=\frac{1}{a}(cos(bx)e^{ax}+\int be^{ax}sin(bx)dx)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int be^{ax}sin(bx)dx=\frac{b}{a}\int sin(bx)de^{ax}=\frac{b}{a}(sin(bx)e^{ax}-\int e^{ax}dsin(bx))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{b}{a}(sin(bx)e^{ax}-b\int e^{ax}cos(bx)dx)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $a\int e^{ax}cos(bx)dx=cos(bx)e^{ax}+\frac{b}{a}sin(bx)e^{ax}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int e^{ax}cos(bx)dx=\frac{acos(bx)e^{ax}+bsin(bx)e^{ax}}{a^{2}+b^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+27.
+
+\series default
+ 
+\begin_inset Formula $\int\frac{1}{(x^{2}+a^{2})}dx=\frac{1}{2a^{2}}\frac{x}{x^{2}+a^{2}}+\frac{1}{2a^{3}}arctan\frac{x}{a}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pf: let 
+\begin_inset Formula $x=a\times tan\theta$
+\end_inset
+
+, 
+\begin_inset Formula $x^{2}+a^{2}=\frac{1}{cos^{2}\theta}a^{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+left side 
+\begin_inset Formula $=\int\frac{\frac{a}{cos^{2}\theta}}{\frac{1}{cos^{4}\theta}a^{4}}d\theta=\frac{1}{a^{3}}\int cos^{2}\theta d\theta=\frac{1}{2a^{3}}\int\frac{1+cos2\theta}{2}d2\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{4a^{3}}(2\theta+sin2\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+note that 
+\begin_inset Formula $\theta=arctan\frac{x}{a}$
+\end_inset
+
+, 
+\begin_inset Formula $sin2\theta=2sin\theta cos\theta=\frac{2ax}{a^{2}+x^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so left side 
+\begin_inset Formula $=\frac{1}{4a^{3}}(2arctan\frac{x}{a}+\frac{2ax}{a^{2}+x^{2}})+c$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
