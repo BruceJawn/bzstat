@@ -32,3 +32,9 @@ This page will be updated from time to time.
   * *Page:* http://code.google.com/p/bzstat/wiki/SplinesNotes
   * *Source:* https://bzstat.googlecode.com/svn/trunk/SeminarNotes/SplineBasics
 https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
+
+==Some Indefinite Integral Formulas==
+  * *Status:* ||v? Released!|| 
+  * *Description:* Seminar notes on splines.
+  * *Page:*
+  * *Source:* https://bzstat.googlecode.com/svn/trunk/IndefiniteIntegralFormulas
