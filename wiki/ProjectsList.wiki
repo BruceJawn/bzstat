@@ -38,3 +38,9 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
   * *Description:* Seminar notes on splines.
   * *Page:*
   * *Source:* https://bzstat.googlecode.com/svn/trunk/IndefiniteIntegralFormulas
+
+==Mean Value Theorem And Taylor Expansion==
+  * *Status:* ||v? Released!|| 
+  * *Description:* Seminar notes on splines.
+  * *Page:*
+  * *Source:* https://bzstat.googlecode.com/svn/trunk/MeanValueTheoremAndTaylorExpansion
