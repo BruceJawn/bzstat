@@ -1,0 +1,787 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding UTF8
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Mean Value Theorem And Taylor Expansion
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Mean Value Theorem:
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ and differentiable on 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+ Then there exists a point 
+\begin_inset Formula $c\in(a,b)$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(b)-f(a)=f'(c)(b-a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As a consequence:
+\end_layout
+
+\begin_layout Standard
+(a) If 
+\begin_inset Formula $f'(x)\geq0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in(a,b)$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is increasing.
+\end_layout
+
+\begin_layout Standard
+(b) If 
+\begin_inset Formula $f'(x)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in(a,b)$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+(c) If 
+\begin_inset Formula $f'(x)\leq0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in(a,b)$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is decreasing.
+\end_layout
+
+\begin_layout Standard
+Proof: Consider the function 
+\begin_inset Formula $g(x)=f(b)-f(x)+\frac{f(b)-f(a)}{b-a}(x-b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g(x)$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ and differentiable on 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g(a)=g(b)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It follows that 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ attains either a maximum or a minimum at some 
+\begin_inset Formula $c\in(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At this point, 
+\begin_inset Formula $g'(c)=0$
+\end_inset
+
+, which is equivalent to the mean value property.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Mean Value Theorem of Integrals:
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+, there exist a point 
+\begin_inset Formula $c\in[a,b]$
+\end_inset
+
+, such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{a}^{b}f(x)dx=f(c)(b-a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+, let the maximum and minimum value of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ be 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+, then 
+\begin_inset Formula $m\leq f(x)\leq M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Integral the last inequality, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m(b-a)\leq\int_{a}^{b}f(x)dx\leq M(b-a)$
+\end_inset
+
+, or 
+\begin_inset Formula $m\leq\int_{a}^{b}f(x)dx/(b-a)\leq M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $m\leq\int_{a}^{b}f(x)dx/(b-a)\leq M$
+\end_inset
+
+, 
+\begin_inset Formula $m\leq f(x)\leq M$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is continuous, there exist a point 
+\begin_inset Formula $c$
+\end_inset
+
+, such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{a}^{b}f(x)dx/(b-a)=f(c)$
+\end_inset
+
+, that's to say
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{a}^{b}f(x)dx=f(c)(b-a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multivariate Mean Value Theorem:
+\end_layout
+
+\begin_layout Standard
+Let function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ map an open subset 
+\begin_inset Formula $S$
+\end_inset
+
+ of 
+\begin_inset Formula $R^{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $R^{m}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is differentiable on a neighborhood of 
+\begin_inset Formula $x\in S$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(y)=f(x)+\int_{0}^{1}df[x+t(y-x)]dt(y-x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for 
+\begin_inset Formula $y$
+\end_inset
+
+ near 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Proof: Integrating component by component, we only consider the case 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The real-valued function 
+\begin_inset Formula $g(t)=f[x+t(y-x)]$
+\end_inset
+
+ of the scalar 
+\begin_inset Formula $t$
+\end_inset
+
+ has differential 
+\begin_inset Formula $dg(t)=df[x+t(y-x)](y-x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because differentials and derivatives coincide on the real line, the equality
+ follows from the fundamental theorem of calculus applied to 
+\begin_inset Formula $g(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Taylor’s Theorem:
+\end_layout
+
+\begin_layout Standard
+Let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L_{2}[0,1]$
+\end_inset
+
+ be the set of all square integrable functions on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C^{m}[0,1]=$
+\end_inset
+
+{
+\begin_inset Formula $\mu$
+\end_inset
+
+: 
+\begin_inset Formula $\mu^{(j)}$
+\end_inset
+
+ is continuous, 
+\begin_inset Formula $j=0,\cdots,m$
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $W_{2}^{m}[0,1]=$
+\end_inset
+
+{
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mu$
+\end_inset
+
+: 
+\begin_inset Formula $\mu^{(j)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is absolutely continuous, 
+\begin_inset Formula $j=0,\cdots,m-1,$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu^{(m)}\in L_{2}[0,1]$
+\end_inset
+
+}
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $W_{2}^{m}[0,1]\supset C^{m}[0,1]$
+\end_inset
+
+ and 
+\begin_inset Formula $W_{2}^{0}[0,1]=L_{2}[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+If 
+\begin_inset Formula $\mu\in W_{2}^{m}[0,1]$
+\end_inset
+
+, then there exists coefficient 
+\begin_inset Formula $\theta_{1},\cdots,\theta_{m}$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu(t)=\Sigma_{j=1}^{m}\theta_{j}t^{j-1}+\int_{0}^{1}\frac{(t-u)_{+}^{m-1}}{(m-1)!}\mu^{(m)}(u)du$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $(x)_{+}^{r}=\begin{cases}
+x^{r}, & x\geq0,\\
+0, & x<0.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: Write 
+\begin_inset Formula $\mu(t)=\int_{0}^{1}(t-u)_{+}^{0}\mu'(u)du+\mu(0)$
+\end_inset
+
+ and integrate by parts.
+\end_layout
+
+\begin_layout Standard
+Taylor’s Theorem suggests that if, for some positive integer
+\begin_inset Formula $\lambda$
+\end_inset
+
+, the remainder term
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Rem_{\lambda}(t)=[(\lambda-1)!]^{-1}\int_{0}^{1}(t-u)_{+}^{\lambda-1}\mu^{(\lambda)}(u)du$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is uniformly small then we could write 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y_{i}\approx\Sigma_{j=1}^{\lambda}\theta_{j}t_{i}^{j-1}+\epsilon_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,\cdots,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In other words, the data would follow an approximate polynomial regression
+ model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f:R^{d}\to R$
+\end_inset
+
+ and if 
+\begin_inset Formula $\ddot{f}(x)$
+\end_inset
+
+ is continuous in the sphere 
+\begin_inset Formula $O_{r}(x_{0})$
+\end_inset
+
+, then for 
+\begin_inset Formula $|t|<r$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x_{0}+t)=f(x_{0})+\dot{f}(x_{0})t+t^{T}\int_{0}^{1}\int_{0}^{1}v\ddot{f}(x_{0}+uvt)dudvt$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Proof: Since 
+\begin_inset Formula $\ddot{f}(x_{0}+uvt)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left(\begin{array}{c}
+\dot{f}_{1}\\
+\dot{f}_{2}\\
+\vdots\\
+\dot{f}_{d}
+\end{array}\right)=\left(\begin{array}{cccc}
+\frac{\partial^{2}}{\partial x_{1}\partial x_{1}}f(x_{0}+uvt) & \frac{\partial^{2}}{\partial x_{1}\partial x_{2}}f(x_{0}+uvt) & \cdots & \frac{\partial^{2}}{\partial x_{1}\partial x_{d}}f(x_{0}+uvt)\\
+\frac{\partial^{2}}{\partial x_{2}\partial x_{1}}f(x_{0}+uvt) & \frac{\partial^{2}}{\partial x_{2}\partial x_{2}}f(x_{0}+uvt) & \cdots & \frac{\partial^{2}}{\partial x_{2}\partial x_{d}}f(x_{0}+uvt)\\
+\cdots & \cdots & \cdots & \cdots\\
+\frac{\partial^{2}}{\partial x_{d}\partial x_{1}}f(x_{0}+uvt) & \frac{\partial^{2}}{\partial x_{d}\partial x_{2}}f(x_{0}+uvt) & \cdots & \frac{\partial^{2}}{\partial x_{d}\partial x_{d}}f(x_{0}+uvt)
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+it follows that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t^{T}\int_{0}^{1}\int_{0}^{1}v\ddot{f}(x_{0}+uvt)dudvt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\int_{0}^{1}\int_{0}^{1}vt^{T}\ddot{f}(x_{0}+uvt)tdudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\int_{0}^{1}\int_{0}^{1}v\Sigma_{i=1}^{d}\Sigma_{j=1}^{d}t_{i}\frac{\partial^{2}}{\partial x_{i}\partial x_{j}}f(x_{0}+uvt)t_{j}dudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}v\int_{0}^{1}\Sigma_{j=1}^{d}\frac{\partial^{2}}{\partial x_{i}\partial x_{j}}f(x_{0}+uvt)t_{j}dudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\{v\int_{0}^{1}\Sigma_{j=1}^{d}\frac{\partial}{\partial x_{j}}[\frac{\partial}{\partial x_{i}}f(x_{0}+uvt)]t_{j}\}dudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\{\int_{0}^{1}\Sigma_{j=1}^{d}\frac{\partial}{\partial x_{j}}[\frac{\partial}{\partial x_{i}}f(x_{0}+uvt)]vt_{j}\}dudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\{\int_{0}^{1}(vt)^{T}\frac{\partial}{\partial x}[\frac{\partial}{\partial x_{i}}f(x_{0}+uvt)]\}dudv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\{\int_{0}^{1}\frac{\partial}{\partial u}[\frac{\partial}{\partial x_{i}}f(x_{0}+uvt)]du\}dv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\{\frac{\partial}{\partial x_{i}}f(x_{0}+vt)-\frac{\partial}{\partial x_{i}}f(x_{0})\}dv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\int_{0}^{1}\Sigma_{i=1}^{d}t_{i}\frac{\partial}{\partial x_{i}}f(x_{0}+vt)dv-\Sigma_{i=1}^{d}t_{i}\int_{0}^{1}\frac{\partial}{\partial x_{i}}f(x_{0})dv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\int_{0}^{1}\frac{\partial}{\partial v}f(x_{0}+vt)dv-\dot{f}(x_{0})t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=f(x_{0}+t)-f(x_{0})-\dot{f}(x_{0})t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+References:
+\end_layout
+
+\begin_layout Standard
+Optimization, Kenneth Lange
+\end_layout
+
+\begin_layout Standard
+Nonparametric Regression and Spline Smoothing, Eubank R.
+\end_layout
+
+\begin_layout Standard
+A Course in Large Sample Theory(Lecture notes), Xianyi Wu
+\end_layout
+
+\end_body
+\end_document
