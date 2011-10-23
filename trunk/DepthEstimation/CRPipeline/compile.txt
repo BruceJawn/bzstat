@@ -1,0 +1,8 @@
+=============================================================
+To Compile(win32, MSYS)
+=============================================================
+cd ?:/?/
+gcc -o myprogram.exe program.c -lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
+=============================================================
+Required libraries: SDL, SDL_image, SDL_mixer, SDL_ttf
+=============================================================
