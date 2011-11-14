@@ -57,8 +57,20 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
   * *Page:*
   * *Source:* http://bzstat.googlecode.com/svn/trunk/IndexMappingTheorems/
 
-==Kernel Local Smoothing and Image Voxel Scaling==
-  * *Status:* ||v? Released!|| 
+==Kernel Local Smoothing and Image Voxel Scaling(W.I.P.)==
+  * *Status:* ||Concept|| 
   * *Description:* Depth estimation pipeline and demos.
   * *Page:*
-  * *Source:* http://bzstat.googlecode.com/svn/trunk/KernelScaling/
+  * *Source:* http://bzstat.googlecode.com/svn/trunk/KernelScaling/ (nothing here currently)
+
+==Barycentric Coordinate System And Texture Mapping(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* Depth estimation pipeline and demos.
+  * *Page:*
+  * *Source:* 
+
+==Sphere Coordinate System And Skeleton Animation(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* Depth estimation pipeline and demos.
+  * *Page:*
+  * *Source:* 
