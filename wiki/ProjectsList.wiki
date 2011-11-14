@@ -53,24 +53,24 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
 
 ==Kronecker Index Mapping==
   * *Status:* ||v? Released!|| 
-  * *Description:* Depth estimation pipeline and demos.
+  * *Description:* Kronecker index mapping theorems.
   * *Page:*
   * *Source:* http://bzstat.googlecode.com/svn/trunk/IndexMappingTheorems/
 
 ==Kernel Local Smoothing and Image Voxel Scaling(W.I.P.)==
   * *Status:* ||Concept|| 
-  * *Description:* Depth estimation pipeline and demos.
+  * *Description:* 
   * *Page:*
   * *Source:* http://bzstat.googlecode.com/svn/trunk/KernelScaling/ (nothing here currently)
 
 ==Barycentric Coordinate System And Texture Mapping(W.I.P.)==
   * *Status:* ||Concept|| 
-  * *Description:* Depth estimation pipeline and demos.
+  * *Description:*
   * *Page:*
   * *Source:* 
 
 ==Sphere Coordinate System And Skeleton Animation(W.I.P.)==
   * *Status:* ||Concept|| 
-  * *Description:* Depth estimation pipeline and demos.
+  * *Description:* 
   * *Page:*
   * *Source:* 
