@@ -61,7 +61,7 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
   * *Status:* ||v? Released!|| 
   * *Description:* My bachelor thesis(In Chinese).
   * *Page:*
-  * *Source:* http://bzstat.googlecode.com/svn/trunk/KernelScaling/ (nothing here currently)
+  * *Source:* http://bzstat.googlecode.com/svn/trunk/PopulationForecasting/BuZhou_PopulationForecasting.pdf
 
 ==Kernel Local Smoothing and Image Voxel Scaling(W.I.P.)==
   * *Status:* ||Concept|| 
