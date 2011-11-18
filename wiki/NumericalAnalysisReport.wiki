@@ -1,8 +1,6 @@
 #summary Numerical Analysis Report.
 
-= Splines Notes =
-
-Add your content here.
+= Numerical Analysis Report =
 
 == Status: ==
 
