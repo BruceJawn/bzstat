@@ -17,7 +17,7 @@ This page will be updated from time to time.
 ==Numerical Analysis Class Report==
   * *Status:* ||v? Released!|| 
   * *Description:* Study Report for Numerical Analysis. With Matlab/Latex/Smartdraw source files.
-  * *Page:* Click this for project detals.
+  * *Page:* http://code.google.com/p/bzstat/wiki/NumericalAnalysisReport
   * *Source:* http://bzstat.googlecode.com/files/Study%20Report%20for%20Numerical%20Analysis%28with%20latex%2Cmatlab%2Csmartdraw%20sources%29.zip
 
 ==On Borel–Cantelli Lemma==
