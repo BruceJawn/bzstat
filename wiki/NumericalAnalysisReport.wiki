@@ -7,7 +7,7 @@
 ||v? Released!|| 
 
 == Description: ==
-Class report for Numerical Analysis. PDF report with latex,matlab,smartdraw sources.
+Class report for Numerical Analysis. PDF reports with latex,matlab,smartdraw sources.
 
 == Features: ==
 
