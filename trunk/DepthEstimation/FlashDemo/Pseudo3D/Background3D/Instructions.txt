@@ -1,0 +1,2 @@
+1. Move your mouse to change the (x,y) position of the red sprite.
+2. Hold left mouse button to change the depth of the red sprite.
