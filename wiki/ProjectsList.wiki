@@ -80,3 +80,15 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
   * *Description:* 
   * *Page:*
   * *Source:* 
+
+==Noise and Smoothing(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* 
+
+==3D Voxel Mapping/Texturing(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* 
