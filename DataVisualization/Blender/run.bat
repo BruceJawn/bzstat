@@ -1,0 +1,1 @@
+"G:\Program Files\Blender Foundation\Blender249\blender.exe" -b -P barchart.py -- data.csv
