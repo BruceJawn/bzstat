@@ -1,0 +1,19 @@
+A1<-matrix(0,4,5);
+A2<-matrix(0,5,6);
+A3<-matrix(0,9,8);
+A1[1,1]<-1;
+A1[1,2]<-2;
+A1[3,4]<-3;
+A2[2,2]<-4;
+A2[3,5]<-5;
+A3[7,7]<-6;
+A<-kronecker(A1,A2);
+A<-kronecker(A,A3);
+A[16,15]#=24
+A[16,63]#=48
+A[106,159]#=72
+A[25,39]#=30
+A[25,87]#=60
+A[115,183]#=90
+library(Matrix);
+nnzero(A);#print the number of non-zero elements in A #=6
