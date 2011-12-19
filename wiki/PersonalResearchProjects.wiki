@@ -27,3 +27,33 @@ This page will be updated from time to time.
   * *Status:* ||Concept||
   * *Description:* Summary of the project.
   * *Page:* Click this for project detals.
+
+==Kernel Local Smoothing and Image Voxel Scaling(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* http://bzstat.googlecode.com/svn/trunk/KernelScaling/ (nothing here currently)
+
+==Barycentric Coordinate System And Texture Mapping(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:*
+  * *Page:*
+  * *Source:* 
+
+==Sphere Coordinate System And Skeleton Animation(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* 
+
+==Noise and Smoothing(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* 
+
+==3D Voxel Mapping/Texturing(W.I.P.)==
+  * *Status:* ||Concept|| 
+  * *Description:* 
+  * *Page:*
+  * *Source:* 
