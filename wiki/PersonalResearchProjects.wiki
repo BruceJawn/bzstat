@@ -1,0 +1,29 @@
+#summary Some personal research projects by Bruce.
+
+= Introduction =
+
+Some personal research projects by me. I wish to explore the applications of Statistics and Mathematics in some interesting areas.
+This page will be updated from time to time.
+
+
+= Details =
+
+==Project Name(sub-project of ?)==
+  * *Status:* ||Concept||
+  * *Description:* Summary of the project.
+  * *Page:* Click this for project detals.
+
+==Procedural Sound Effect Generation==
+  * *Status:* ||Concept||
+  * *Description:* Summary of the project.
+  * *Page:* Click this for project detals.
+
+==Procedural Music Generation==
+  * *Status:* ||Concept||
+  * *Description:* Summary of the project.
+  * *Page:* Click this for project detals.
+
+==Game Balance==
+  * *Status:* ||Concept||
+  * *Description:* Summary of the project.
+  * *Page:* Click this for project detals.
