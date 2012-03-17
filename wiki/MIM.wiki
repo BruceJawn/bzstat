@@ -10,24 +10,42 @@ Add your content here.
 ||Alpha|| 
 
 == Description: ==
-Package "MIM" (multi-index mapping). An R package for multi-index manipulation based on the paper [http://bzstat.googlecode.com/svn/trunk/IndexMappingTheorems/].
+Package "MIM" (multi-index mapping). 
+
+An R package for multi-index manipulation based on the paper [http://bzstat.googlecode.com/svn/trunk/IndexMappingTheorems/].
+
 Still under development and will be released in the near future.
 == Features: ==
 Contents:
-1. mapping 
+
+1. multi index mapping
+
 2. inverse mapping
-3. product
-4. perfect shuffle l_1 l_2
+
+3. matrix product calculation
+
+4. perfect shuffle matrix
+
 5. Kronecker_matrix
+
 6. Kronecker_entry using inverse mapping
+
 7. Number convertion
+
 8. Vectorization
+
 9. Vectorization_entry
-10. tensor_multidimensional array
-11. Vectorization Warping
+
+10. tensor_multi-dimensional array
+
+11. Vectorization & Warping
+
 12. Octree
+
 13. Quadtree
+
 14. Binarytree
+
 15. V2K S0 S1
 
 == Todos: ==
