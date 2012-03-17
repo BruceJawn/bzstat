@@ -57,6 +57,12 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
   * *Page:*
   * *Source:* http://bzstat.googlecode.com/svn/trunk/IndexMappingTheorems/
 
+==Package MIM==
+  * *Status:* ||Alpha|| 
+  * *Description:* The multi-index mapping R package.
+  * *Page:* http://code.google.com/p/bzstat/wiki/MIM
+  * *Source:*
+
 ==Population Forecasting==
   * *Status:* ||v? Released!|| 
   * *Description:* My bachelor thesis(In Chinese).
