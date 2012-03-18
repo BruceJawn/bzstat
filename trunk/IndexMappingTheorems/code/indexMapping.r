@@ -18,7 +18,7 @@ mul <- function(l)
 mmod <- function(p,q)
   {
     returnVar <- p%%q;
-    if(returnVar==0)returnVar=p;
+    if(returnVar==0)returnVar=q;
     return (returnVar);
   }#end of mmod
 
