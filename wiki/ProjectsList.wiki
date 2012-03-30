@@ -65,9 +65,16 @@ https://bzstat.googlecode.com/svn/trunk/SeminarNotes/MDLspline/
 
 ==Population Forecasting==
   * *Status:* ||v? Released!|| 
-  * *Description:* My bachelor thesis(In Chinese).
+  * *Description:* My bachelor thesis (In Chinese).
   * *Page:*
   * *Source:* http://bzstat.googlecode.com/svn/trunk/PopulationForecasting/BuZhou_PopulationForecasting.pdf
+
+
+==Orthogonality-based Estimation of Nonparametric Mixed-Effect Models==
+  * *Status:* ||v? Released!|| 
+  * *Description:* My master thesis (In Chinese).
+  * *Page:*
+  * *Source:* https://bzstat.googlecode.com/svn/trunk/OBENMM
 
 ==Personal Research Projects   ==
   * *Status:* ||v? Released!|| 
