@@ -1,0 +1,317 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\begin_modules
+sweave
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding UTF8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Problem:
+\end_layout
+
+\begin_layout Standard
+Assume that the number of cases of tetanus reported in the United States
+ during a single month in 2005 has a Poisson distribution with parameter
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ The number of cases reported in January and February are 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $3$
+\end_inset
+
+ respectively.
+ 
+\end_layout
+
+\begin_layout Standard
+(a) Find and plot the likelihood function over the space of potential values
+ for 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(b) What is the maximum likelihood estimate (MLE) of 
+\begin_inset Formula $\mu$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+(c) Give an estimate of the probability that there is no case of tetanus
+ reported for a given month.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Solution:
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $Y$
+\end_inset
+
+ be the number of cases of tetanus reported in the United States during
+ a single month in 2005.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $Y$
+\end_inset
+
+ has a Poisson distribution with unknown parameter 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and the probability mass function of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(Y=y)=e^{-\mu}\frac{\mu^{y}}{y!},y=0,1,2,\cdots$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(a) We have two observations, 
+\begin_inset Formula $Y_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{2}$
+\end_inset
+
+ from the above distribution with 
+\begin_inset Formula $Y_{1}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{2}=3$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The likelihood function is then given by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L(\mu|Y_{1}=1,Y_{2}=3)=P(Y_{1}=1)\times P(Y_{2}=3)=e^{-\mu}\frac{\mu^{1}}{1!}\times e^{-\mu}\frac{\mu^{3}}{3!}=e^{-2\mu}\frac{\mu^{4}}{6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Some simple R codes to make the plot of the likelihood function, 
+\begin_inset Formula $L(\mu)$
+\end_inset
+
+, are given below: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<fig=T,echo=T,height=5>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+mu<-seq(0,10,by=0.01);
+\end_layout
+
+\begin_layout Plain Layout
+
+lik<-exp(-2*mu)*(mu^4)/6;
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(mu,lik,type="l",xlab="Mu",ylab="Likelihood Function");
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) To find the maximum likelihood estimate, take the derivative of 
+\begin_inset Formula $L(\mu|Y_{1}=1,Y_{2}=3)$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\mu$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+we have 
+\begin_inset Formula $(e^{-2\mu}\frac{\mu^{4}}{6})^{'}=e^{-2\mu}\frac{4\mu^{3}}{6}-2e^{-2\mu}\frac{\mu^{4}}{6}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $e^{-2\mu}\frac{4\mu^{3}}{6}-2e^{-2\mu}\frac{\mu^{4}}{6}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{4\mu^{3}}{6}=2\frac{\mu^{4}}{6}$
+\end_inset
+
+, one has the root 
+\begin_inset Formula $\mu=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So the maximum likelihood estimate of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(c) The probability that there is no case of tetanus reported for a given
+ month is 
+\begin_inset Formula $P(Y=0)=e^{-\mu}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The estimated value of this probability using the MLE of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is 
+\begin_inset Formula $e^{-\mu}=e^{-2}=0.13534$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
