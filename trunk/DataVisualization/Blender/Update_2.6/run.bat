@@ -1,0 +1,1 @@
+"D:\Program Files\Blender Foundation\Blender\Blender.exe" -P "C:\Users\hp\Desktop\BlenderData\barchart.py" -- "C:\Users\hp\Desktop\BlenderData\data.csv"
